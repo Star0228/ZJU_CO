@@ -1,0 +1,5 @@
+DisplaySync.v,verilog,xil_defaultlib,../../../../OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/DisplaySync.v,
+MC_14495.v,verilog,xil_defaultlib,../../../../OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/MC_14495.v,
+Seg7_Dev.v,verilog,xil_defaultlib,../../../../OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/Seg7_Dev.v,
+Seg7_Dev_0.v,verilog,xil_defaultlib,../../../../OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/sim/Seg7_Dev_0.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v
