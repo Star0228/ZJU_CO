@@ -124,7 +124,6 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param general.maxThreads 8
   set_param chipscope.maxJobs 4
-  set_param xicom.use_bs_reader 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
   set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
@@ -155,6 +154,8 @@ OPTRACE "add files" START { }
   read_edif D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Multi_8CH32.edf
   read_edif D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/MIO_BUS.edf
   read_edif D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Counter_x.edf
+  read_edif D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/Lab4-0-attachment/DataPath.edf
+  read_edif D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/Lab4-0-attachment/SCPU_ctrl.edf
 OPTRACE "read constraints: implementation" START { }
   read_xdc D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc
 OPTRACE "read constraints: implementation" END { }

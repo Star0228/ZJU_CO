@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1711520198" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/CSSTE.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1714736568" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/CSSTE.dcp">
   <File Type="PA-TCL" Name="CSSTE.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="CSSTE_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="CSSTE_reports.tcl"/>
@@ -11,6 +11,13 @@
   <File Type="VDS-TIMING-PB" Name="CSSTE_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/SCPU_W.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/IP/clk_div.edf">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../doc/Lab2-attachment/OExp02-IP2SOC/IP/clk_div.edf"/>
@@ -249,6 +256,40 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../doc/UART/uart_tx.v"/>
         <Attr Name="ImportTime" Val="1705629218"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Lab4-0-attachment/DataPath.edf">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../doc/Lab4-0-attachment/DataPath.edf"/>
+        <Attr Name="ImportTime" Val="1713885048"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Lab4-0-attachment/SCPU_ctrl.edf">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../doc/Lab4-0-attachment/SCPU_ctrl.edf"/>
+        <Attr Name="ImportTime" Val="1713885048"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Lab4-0-attachment/SCPU_ctrl.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../doc/Lab4-0-attachment/SCPU_ctrl.v"/>
+        <Attr Name="ImportTime" Val="1713885048"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Lab4-0-attachment/DataPath.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../doc/Lab4-0-attachment/DataPath.v"/>
+        <Attr Name="ImportTime" Val="1713885048"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

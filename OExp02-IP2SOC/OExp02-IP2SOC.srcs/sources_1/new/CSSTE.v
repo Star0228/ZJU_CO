@@ -68,7 +68,7 @@ Counter_x U10(.clk(~U8_clkcpu), .rst(U9_rst), .clk0(U8_clkdiv[6]), .clk1(U8_clkd
 
 ROM_1 U2(.a(U1_pc[11:2]),.spo(U2_spo));
 
-SCPU U1(.clk(U8_clkcpu), .rst(U9_rst), .inst_in(U2_spo), .Data_in(U4_cpu), .MemRW(U1_memrw), .PC_out(U1_pc), .Data_out(U1_data), .Addr_out(U1_add));
+SCPU_W U1(.clk(U8_clkcpu), .rst(U9_rst), .inst_in(U2_spo), .Data_in(U4_cpu), .MemRW(U1_memrw), .PC_out(U1_pc), .Data_out(U1_data), .Addr_out(U1_add));
 
 RAM_1 U3(.clka(~clk_100mhz),.wea(U4_datawe),.addra(U4_ramadd),.dina(u4ram),.douta(U3_douta));
 
@@ -80,9 +80,7 @@ Seg7_Dev_0 U6(.disp_num(U5_dispnum),.point(U5_ptout),.les(U5_LEout),.scan(U8_clk
 
 SPIO U7(.clk(~U8_clkcpu), .rst(U9_rst), .Start(U8_clkdiv[20]), .EN(U4_gpiofwe), .P_Data(U4_pin), .counter_set(U7_cntset), .LED_out(LED_out));
 
-VGA U11(.clk_25m(U8_clkdiv[1]), .clk_100m(clk_100mhz), .rst(U9_rst), .pc(U1_pc), .inst(U2_spo), .alu_res(U1_add), .mem_wen(U1_memrw), .dmem_o_data(U3_douta), .dmem_i_data(U4_ramin), .dmem_addr(U1_add), .hs(HSYNC),.vs(VSYNC), .vga_r(Red), .vga_g(Green), .vga_b(Blue)
+//VGA U11(.clk_25m(U8_clkdiv[1]), .clk_100m(clk_100mhz), .rst(U9_rst), .pc(U1_pc), .inst(U2_spo), .alu_res(U1_add), .mem_wen(U1_memrw), .dmem_o_data(U3_douta), .dmem_i_data(U4_ramin), .dmem_addr(U1_add), .hs(HSYNC),.vs(VSYNC), .vga_r(Red), .vga_g(Green), .vga_b(Blue));
 
-);
-
-//UART uart_inst(.clk(clk_100mhz), .rst(U9_rst), .tx(tx), .pc(U1_pc), .inst(U2_spo));
+UART uart_inst(.clk(clk_100mhz), .rst(U9_rst), .tx(tx), .pc(U1_pc), .inst(U2_spo));
 endmodule
