@@ -1,0 +1,46 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../OExp02-IP2SOC.srcs/sources_1/new/SCPU_W.v" \
+"../../../../OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/DisplaySync.v" \
+"../../../../OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/MC_14495.v" \
+"../../../../OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/Seg7_Dev.v" \
+"../../../../OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/sim/Seg7_Dev_0.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/IP/Counter_x.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/new/Hex2Ascii.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/IP/MIO_BUS.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/IP/Multi_8CH32.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/IP/SAnti_jitter.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/IP/SCPU.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/IP/SPIO.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/new/VGA.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/new/VgaController.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/new/VgaDebugger.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/new/VgaDisplay.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/IP/clk_div.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v" \
+"../../../../OExp02-IP2SOC.gen/sources_1/ip/ROM_1/sim/ROM_1.v" \
+"../../../../OExp02-IP2SOC.gen/sources_1/ip/RAM_1/sim/RAM_1.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/UART/UART.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/UART/string_to_print.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/UART/uart_display.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/UART/uart_tx.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/Lab4-0-attachment/SCPU_ctrl.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/new/ImmGen.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/new/ALU.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/new/Regs.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/new/DataPath.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/Lab4-0-attachment/DataPath.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/new/SCPU_W_1.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/lab4´®¿Ú/uart_display.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/lab4´®¿Ú/UART.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/imports/lab4´®¿Ú/string_to_print.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/new/testbench.v" \
+"../../../../OExp02-IP2SOC.srcs/sim_1/new/testbench_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

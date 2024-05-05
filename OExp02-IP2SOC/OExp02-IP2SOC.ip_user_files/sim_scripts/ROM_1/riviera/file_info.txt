@@ -1,3 +1,5 @@
+xpm_memory.sv,systemverilog,xpm,../../../../../../../Vivado/Vivado/2022.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv,
+xpm_VCOMP.vhd,vhdl,xpm,../../../../../../../Vivado/Vivado/2022.2/data/ip/xpm/xpm_VCOMP.vhd,
 dist_mem_gen_v8_0.v,verilog,dist_mem_gen_v8_0_13,../../../ipstatic/simulation/dist_mem_gen_v8_0.v,
 ROM_1.v,verilog,xil_defaultlib,../../../../OExp02-IP2SOC.gen/sources_1/ip/ROM_1/sim/ROM_1.v,
 glbl.v,Verilog,xil_defaultlib,glbl.v

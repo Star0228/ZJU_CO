@@ -26,40 +26,40 @@ module Regs(
     input [4:0] Wt_addr, 
     input [31:0]Wt_data, 
     input RegWrite, 
-    output [31:0] Rs1_data, 
-    output [31:0] Rs2_data,
-    output [31:0] Reg00,
-    output [31:0] Reg01,
-    output [31:0] Reg02,
-    output [31:0] Reg03,
-    output [31:0] Reg04,
-    output [31:0] Reg05,
-    output [31:0] Reg06,
-    output [31:0] Reg07,
-    output [31:0] Reg08,
-    output [31:0] Reg09,
-    output [31:0] Reg10,
-    output [31:0] Reg11,
-    output [31:0] Reg12,
-    output [31:0] Reg13,
-    output [31:0] Reg14,
-    output [31:0] Reg15,
-    output [31:0] Reg16,
-    output [31:0] Reg17,
-    output [31:0] Reg18,
-    output [31:0] Reg19,
-    output [31:0] Reg20,
-    output [31:0] Reg21,
-    output [31:0] Reg22,
-    output [31:0] Reg23,
-    output [31:0] Reg24,
-    output [31:0] Reg25,
-    output [31:0] Reg26,
-    output [31:0] Reg27,
-    output [31:0] Reg28,
-    output [31:0] Reg29,
-    output [31:0] Reg30,
-    output [31:0] Reg31
+    output wire [31:0] Rs1_data, 
+    output wire[31:0] Rs2_data,
+    output wire[31:0] Reg00,
+    output wire[31:0] Reg01,
+    output wire[31:0] Reg02,
+    output wire[31:0] Reg03,
+    output wire[31:0] Reg04,
+    output wire[31:0] Reg05,
+    output wire[31:0] Reg06,
+    output wire[31:0] Reg07,
+    output wire[31:0] Reg08,
+    output wire[31:0] Reg09,
+    output wire[31:0] Reg10,
+    output wire[31:0] Reg11,
+    output wire[31:0] Reg12,
+    output wire[31:0] Reg13,
+    output wire[31:0] Reg14,
+    output wire[31:0] Reg15,
+    output wire[31:0] Reg16,
+    output wire[31:0] Reg17,
+    output wire[31:0] Reg18,
+    output wire[31:0] Reg19,
+    output wire[31:0] Reg20,
+    output wire[31:0] Reg21,
+    output wire[31:0] Reg22,
+    output wire[31:0] Reg23,
+    output wire[31:0] Reg24,
+    output wire[31:0] Reg25,
+    output wire[31:0] Reg26,
+    output wire[31:0] Reg27,
+    output wire[31:0] Reg28,
+    output wire[31:0] Reg29,
+    output wire[31:0] Reg30,
+    output wire[31:0] Reg31
 );
 
 reg [31:0]tem[1:31];
@@ -109,6 +109,10 @@ always @(posedge clk) begin
   if(RegWrite&&!rst&&Wt_addr)begin
     tem[Wt_addr] <= Wt_data;
   end
-
 end
+//always @(negedge clk) begin
+//if(RegWrite&&!rst&&Wt_addr)begin
+//    tem[Wt_addr] <= Wt_data;
+//  end
+//end
 endmodule
