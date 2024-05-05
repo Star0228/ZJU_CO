@@ -155,11 +155,34 @@ assign wea = Tem_wea;
 assign Data_out = Tem_Data;
 always @(*)begin
   case(Length)
-    3'b000: Tem_mem <= {24'b0,Data_in[7:0]};
-    3'b001: Tem_mem <= {{24{Data_in[7]}},Data_in[7:0]};
-    3'b010: Tem_mem <= {16'b0,Data_in[15:0]};
-    3'b011: Tem_mem <= {{16{Data_in[15]}},Data_in[15:0]};
-    3'b100: Tem_mem <= Data_in;
+    3'b000: 
+    case(ALU_out[1:0])
+      2'b00:Tem_mem <= {24'b0,Data_in[7:0]};
+      2'b01:Tem_mem <= {24'b0,Data_in[15:8]};
+      2'b10:Tem_mem <= {24'b0,Data_in[23:16]};
+      2'b11:Tem_mem <= {24'b0,Data_in[31:24]};
+    endcase
+    3'b001: 
+    case(ALU_out[1:0])
+      2'b00:Tem_mem <= {{24{Data_in[7]}},Data_in[7:0]};
+      2'b01:Tem_mem <= {{24{Data_in[15]}},Data_in[15:8]};
+      2'b10:Tem_mem <= {{24{Data_in[23]}},Data_in[23:16]};
+      2'b11:Tem_mem <= {{24{Data_in[31]}},Data_in[31:24]};
+    endcase
+    3'b010:
+    case(ALU_out[1:0])
+      2'b00:Tem_mem <= {16'b0,Data_in[15:0]};
+      2'b01:Tem_mem <= {16'b0,Data_in[23:8]};
+      2'b10:Tem_mem <= {16'b0,Data_in[31:16]};
+    endcase
+    3'b011: 
+    case(ALU_out[1:0])
+      2'b00:Tem_mem <= {{16{Data_in[15]}},Data_in[15:0]};
+      2'b01:Tem_mem <= {{16{Data_in[23]}},Data_in[23:8]};
+      2'b10:Tem_mem <= {{16{Data_in[31]}},Data_in[31:16]};
+    endcase
+    3'b100:
+     Tem_mem <= Data_in;
   endcase
   case(MemtoReg)
     3'b000: Wt_data <= ALU_out;

@@ -64,7 +64,7 @@ always@(*)begin
                 3'b010: ALU_Control <= 4'b0011;
                 3'b011: ALU_Control <= 4'b0100;
                 3'b100: ALU_Control <= 4'b0101;
-                3'b101: ALU_Control <= 4'b0110;
+                3'b101: ALU_Control <= Fun7?4'b0111:4'b0110;
                 3'b110: ALU_Control <= 4'b1000;
                 3'b111: ALU_Control <= 4'b1001;
             endcase
