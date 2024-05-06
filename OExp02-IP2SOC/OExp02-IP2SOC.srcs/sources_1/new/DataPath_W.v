@@ -80,7 +80,9 @@ module DataPath_W(
     output [31:0] Reg30,
     output [31:0] Reg31
 );
-
+initial begin
+  PC_out <= 32'd0;
+end
 wire [31:0] Rs1_data, Rs2_data;
 reg [31:0] Wt_data;
 
@@ -127,6 +129,9 @@ Regs U1(
     .Reg30(Reg30),
     .Reg31(Reg31)
 );
+
+
+
 wire [31:0] Imm_out;
 ImmGen U2(
   .inst_field(inst_field),

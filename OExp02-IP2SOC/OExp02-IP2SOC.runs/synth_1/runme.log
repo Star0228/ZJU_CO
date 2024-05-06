@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log testbench.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source testbench.tcl
+    with args -log CSSTE.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source CSSTE.tcl
 
 
 
@@ -10,8 +10,8 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 Sourcing tcl script 'D:/Vivado/Vivado/2022.2/scripts/Vivado_init.tcl'
-source testbench.tcl -notrace
-create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 377.637 ; gain = 61.996
+source CSSTE.tcl -notrace
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 375.773 ; gain = 69.227
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/ip'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/CS/ZJU_CO/doc/Lab2-attachment/OExp02-IP2SOC/IP'.
@@ -19,16 +19,17 @@ INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2022.2/dat
 Command: read_checkpoint -auto_incremental -incremental D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/utils_1/imports/synth_1/CSSTE.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/utils_1/imports/synth_1/CSSTE.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top testbench -part xc7a100tcsg324-1
+Command: synth_design -top CSSTE -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 9116
+INFO: [Synth 8-7075] Helper process launched with PID 20992
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Vivado/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
-INFO: [Synth 8-11241] undeclared symbol 'u4ram', assumed default net type 'wire' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:80]
 CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'DataPath' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/Lab4-0-attachment/DataPath.v:32]
 INFO: [Synth 8-9937] previous definition of design element 'DataPath' is here [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath.v:32]
 CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'uart_display' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/uart_display.v:444]
@@ -40,9 +41,54 @@ INFO: [Synth 8-9937] previous definition of design element 'string_to_print' is 
 CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'hex_to_ascii' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/string_to_print.v:1196]
 INFO: [Synth 8-9937] previous definition of design element 'hex_to_ascii' is here [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/UART/string_to_print.v:602]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1212.242 ; gain = 407.273
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:18 . Memory (MB): peak = 1214.082 ; gain = 408.234
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'testbench' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:22]
+INFO: [Synth 8-6157] synthesizing module 'CSSTE' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:22]
+INFO: [Synth 8-6157] synthesizing module 'SAnti_jitter' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/SAnti_jitter.v:15]
+WARNING: [Synth 8-7071] port 'readn' of module 'SAnti_jitter' is unconnected for instance 'U9' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:63]
+WARNING: [Synth 8-7071] port 'Key_x' of module 'SAnti_jitter' is unconnected for instance 'U9' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:63]
+WARNING: [Synth 8-7071] port 'Key_out' of module 'SAnti_jitter' is unconnected for instance 'U9' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:63]
+WARNING: [Synth 8-7071] port 'Key_ready' of module 'SAnti_jitter' is unconnected for instance 'U9' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:63]
+WARNING: [Synth 8-7071] port 'pulse_out' of module 'SAnti_jitter' is unconnected for instance 'U9' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:63]
+WARNING: [Synth 8-7071] port 'CR' of module 'SAnti_jitter' is unconnected for instance 'U9' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:63]
+WARNING: [Synth 8-7023] instance 'U9' of module 'SAnti_jitter' has 13 connections declared, but only 7 given [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:63]
+INFO: [Synth 8-6157] synthesizing module 'clk_div' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/clk_div.v:15]
+INFO: [Synth 8-6157] synthesizing module 'Counter_x' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Counter_x.v:15]
+INFO: [Synth 8-638] synthesizing module 'ROM_1' [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/ROM_1/synth/ROM_1.vhd:66]
+	Parameter C_FAMILY bound to: artix7 - type: string 
+	Parameter C_ADDR_WIDTH bound to: 10 - type: integer 
+	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
+	Parameter C_DEPTH bound to: 1024 - type: integer 
+	Parameter C_HAS_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_D bound to: 0 - type: integer 
+	Parameter C_HAS_DPO bound to: 0 - type: integer 
+	Parameter C_HAS_DPRA bound to: 0 - type: integer 
+	Parameter C_HAS_I_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_CLK bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QDPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_CE bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_RST bound to: 0 - type: integer 
+	Parameter C_HAS_QSPO_SRST bound to: 0 - type: integer 
+	Parameter C_HAS_SPO bound to: 1 - type: integer 
+	Parameter C_HAS_WE bound to: 0 - type: integer 
+	Parameter C_MEM_INIT_FILE bound to: ROM_1.mif - type: string 
+	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
+	Parameter C_MEM_TYPE bound to: 0 - type: integer 
+	Parameter C_PIPELINE_STAGES bound to: 0 - type: integer 
+	Parameter C_QCE_JOINED bound to: 0 - type: integer 
+	Parameter C_QUALIFY_WE bound to: 0 - type: integer 
+	Parameter C_READ_MIF bound to: 1 - type: integer 
+	Parameter C_REG_A_D_INPUTS bound to: 0 - type: integer 
+	Parameter C_REG_DPRA_INPUT bound to: 0 - type: integer 
+	Parameter C_SYNC_ENABLE bound to: 1 - type: integer 
+	Parameter C_WIDTH bound to: 32 - type: integer 
+	Parameter C_PARSER_TYPE bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'dist_mem_gen_v8_0_13' declared at 'd:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/ROM_1/hdl/dist_mem_gen_v8_0_vhsyn_rfs.vhd:3237' bound to instance 'U0' of component 'dist_mem_gen_v8_0_13' [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/ROM_1/synth/ROM_1.vhd:132]
+INFO: [Synth 8-256] done synthesizing module 'ROM_1' (0#1) [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/ROM_1/synth/ROM_1.vhd:66]
 INFO: [Synth 8-6157] synthesizing module 'SCPU_W_1' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_W_1.v:23]
 INFO: [Synth 8-6157] synthesizing module 'SCPU_ctrl_W' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:113]
@@ -58,46 +104,15 @@ INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/
 INFO: [Synth 8-6155] done synthesizing module 'ImmGen' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/ImmGen.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ALU' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/new/ALU.v:2]
 INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/new/ALU.v:2]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:157]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:164]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:171]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:198]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:176]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:178]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:184]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:162]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:192]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:199]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:226]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:204]
 INFO: [Synth 8-6155] done synthesizing module 'DataPath_W' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'SCPU_W_1' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_W_1.v:23]
-WARNING: [Synth 8-7071] port 'Reg00' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg01' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg02' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg03' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg04' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg05' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg06' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg07' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg08' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg09' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg10' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg11' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg12' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg13' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg14' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg15' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg16' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg17' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg18' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg19' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg20' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg21' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg22' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg23' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg24' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg25' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg26' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg27' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg28' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg29' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg30' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7071] port 'Reg31' of module 'SCPU_W_1' is unconnected for instance 'u0' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
-WARNING: [Synth 8-7023] instance 'u0' of module 'SCPU_W_1' has 43 connections declared, but only 11 given [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:38]
 INFO: [Synth 8-638] synthesizing module 'RAM_1' [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/RAM_1/synth/RAM_1.vhd:69]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
@@ -176,415 +191,261 @@ INFO: [Synth 8-638] synthesizing module 'RAM_1' [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     2.96495 mW - type: string 
 INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_5' declared at 'd:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/RAM_1/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_5' [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/RAM_1/synth/RAM_1.vhd:234]
 INFO: [Synth 8-256] done synthesizing module 'RAM_1' (0#1) [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/RAM_1/synth/RAM_1.vhd:69]
-INFO: [Synth 8-638] synthesizing module 'ROM_1' [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/ROM_1/synth/ROM_1.vhd:66]
-	Parameter C_FAMILY bound to: artix7 - type: string 
-	Parameter C_ADDR_WIDTH bound to: 10 - type: integer 
-	Parameter C_DEFAULT_DATA bound to: 0 - type: string 
-	Parameter C_DEPTH bound to: 1024 - type: integer 
-	Parameter C_HAS_CLK bound to: 0 - type: integer 
-	Parameter C_HAS_D bound to: 0 - type: integer 
-	Parameter C_HAS_DPO bound to: 0 - type: integer 
-	Parameter C_HAS_DPRA bound to: 0 - type: integer 
-	Parameter C_HAS_I_CE bound to: 0 - type: integer 
-	Parameter C_HAS_QDPO bound to: 0 - type: integer 
-	Parameter C_HAS_QDPO_CE bound to: 0 - type: integer 
-	Parameter C_HAS_QDPO_CLK bound to: 0 - type: integer 
-	Parameter C_HAS_QDPO_RST bound to: 0 - type: integer 
-	Parameter C_HAS_QDPO_SRST bound to: 0 - type: integer 
-	Parameter C_HAS_QSPO bound to: 0 - type: integer 
-	Parameter C_HAS_QSPO_CE bound to: 0 - type: integer 
-	Parameter C_HAS_QSPO_RST bound to: 0 - type: integer 
-	Parameter C_HAS_QSPO_SRST bound to: 0 - type: integer 
-	Parameter C_HAS_SPO bound to: 1 - type: integer 
-	Parameter C_HAS_WE bound to: 0 - type: integer 
-	Parameter C_MEM_INIT_FILE bound to: ROM_1.mif - type: string 
-	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
-	Parameter C_MEM_TYPE bound to: 0 - type: integer 
-	Parameter C_PIPELINE_STAGES bound to: 0 - type: integer 
-	Parameter C_QCE_JOINED bound to: 0 - type: integer 
-	Parameter C_QUALIFY_WE bound to: 0 - type: integer 
-	Parameter C_READ_MIF bound to: 1 - type: integer 
-	Parameter C_REG_A_D_INPUTS bound to: 0 - type: integer 
-	Parameter C_REG_DPRA_INPUT bound to: 0 - type: integer 
-	Parameter C_SYNC_ENABLE bound to: 1 - type: integer 
-	Parameter C_WIDTH bound to: 32 - type: integer 
-	Parameter C_PARSER_TYPE bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'dist_mem_gen_v8_0_13' declared at 'd:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/ROM_1/hdl/dist_mem_gen_v8_0_vhsyn_rfs.vhd:3237' bound to instance 'U0' of component 'dist_mem_gen_v8_0_13' [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/ROM_1/synth/ROM_1.vhd:132]
-INFO: [Synth 8-256] done synthesizing module 'ROM_1' (0#1) [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/ROM_1/synth/ROM_1.vhd:66]
-INFO: [Synth 8-6155] done synthesizing module 'testbench' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v:22]
-WARNING: [Synth 8-7129] Port qspo[31] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[30] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[29] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[28] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[27] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[26] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[25] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[24] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[23] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[22] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[21] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[20] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[19] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[18] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[17] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[16] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[15] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[14] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[13] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[12] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[11] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[10] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[9] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[8] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[7] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[6] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[5] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[4] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[3] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[2] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[1] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo[0] in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo_ce in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo_rst in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qspo_srst in module rom is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[31] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[30] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[29] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[28] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[27] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[26] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[25] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[24] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[23] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[22] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[21] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[20] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[19] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[18] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[17] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[16] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[15] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[14] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[13] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[12] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[11] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[10] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[9] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[8] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[7] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[6] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[5] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[4] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[3] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[2] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[1] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dpo[0] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[31] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[30] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[29] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[28] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[27] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[26] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[25] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[24] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[23] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[22] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[21] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[20] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[19] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[18] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[17] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[16] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[15] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[14] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[13] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[12] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[11] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[10] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[9] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[8] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[7] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[6] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[5] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[4] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[3] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[2] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[1] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
-WARNING: [Synth 8-7129] Port qdpo[0] in module dist_mem_gen_v8_0_13_synth is either unconnected or has no load
+INFO: [Synth 8-6157] synthesizing module 'MIO_BUS' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/MIO_BUS.v:15]
+INFO: [Synth 8-6157] synthesizing module 'Multi_8CH32' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Multi_8CH32.v:15]
+INFO: [Synth 8-6157] synthesizing module 'Seg7_Dev_0' [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/synth/Seg7_Dev_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'Seg7_Dev' [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/Seg7_Dev.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dispsync' [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/DisplaySync.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dispsync' (0#1) [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/DisplaySync.v:23]
+INFO: [Synth 8-6157] synthesizing module 'MC_14495' [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/MC_14495.v:23]
+INFO: [Synth 8-6157] synthesizing module 'INV' [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:75824]
+INFO: [Synth 8-6155] done synthesizing module 'INV' (0#1) [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:75824]
+INFO: [Synth 8-6157] synthesizing module 'AND4' [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:569]
+INFO: [Synth 8-6155] done synthesizing module 'AND4' (0#1) [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:569]
+INFO: [Synth 8-6157] synthesizing module 'OR4' [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94593]
+INFO: [Synth 8-6155] done synthesizing module 'OR4' (0#1) [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94593]
+INFO: [Synth 8-6157] synthesizing module 'AND3' [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:521]
+INFO: [Synth 8-6155] done synthesizing module 'AND3' (0#1) [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:521]
+INFO: [Synth 8-6157] synthesizing module 'OR3' [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94545]
+INFO: [Synth 8-6155] done synthesizing module 'OR3' (0#1) [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94545]
+INFO: [Synth 8-6157] synthesizing module 'AND2' [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:473]
+INFO: [Synth 8-6155] done synthesizing module 'AND2' (0#1) [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:473]
+INFO: [Synth 8-6157] synthesizing module 'OR2' [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94499]
+INFO: [Synth 8-6155] done synthesizing module 'OR2' (0#1) [D:/Vivado/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94499]
+INFO: [Synth 8-6155] done synthesizing module 'MC_14495' (0#1) [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/MC_14495.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Seg7_Dev' (0#1) [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/Seg7_Dev.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Seg7_Dev_0' (0#1) [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/synth/Seg7_Dev_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'SPIO' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/SPIO.v:15]
+WARNING: [Synth 8-7071] port 'led_clk' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:136]
+WARNING: [Synth 8-7071] port 'led_sout' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:136]
+WARNING: [Synth 8-7071] port 'led_clrn' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:136]
+WARNING: [Synth 8-7071] port 'LED_PEN' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:136]
+WARNING: [Synth 8-7071] port 'GPIOf0' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:136]
+WARNING: [Synth 8-7023] instance 'U7' of module 'SPIO' has 12 connections declared, but only 7 given [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:136]
+INFO: [Synth 8-6157] synthesizing module 'UART' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/UART.v:23]
+INFO: [Synth 8-6157] synthesizing module 'uart_display' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/uart_display.v:23]
+INFO: [Synth 8-6157] synthesizing module 'string_to_print' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/string_to_print.v:1]
+INFO: [Synth 8-6157] synthesizing module 'hex_to_ascii' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/string_to_print.v:1191]
+INFO: [Synth 8-6155] done synthesizing module 'hex_to_ascii' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/string_to_print.v:1191]
+INFO: [Synth 8-6155] done synthesizing module 'string_to_print' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/string_to_print.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/uart_display.v:227]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/UART/uart_tx.v:52]
+	Parameter baud_rate bound to: 9600 - type: integer 
+	Parameter sys_clk_freq bound to: 100000000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/UART/uart_tx.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'uart_display' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/uart_display.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'UART' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/UART.v:23]
+WARNING: [Synth 8-7071] port 'rs1' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'rs1_val' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'rs2' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'rs2_val' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'rd' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'reg_i_data' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'reg_wen' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'is_imm' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'is_auipc' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'is_lui' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'imm' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'a_val' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'b_val' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'alu_ctrl' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'cmp_ctrl' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'alu_res' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'cmp_res' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'is_branch' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'is_jal' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'is_jalr' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'do_branch' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'pc_branch' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'mem_wen' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'mem_ren' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'dmem_o_data' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'dmem_i_data' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'dmem_addr' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'csr_wen' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'csr_ind' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'csr_ctrl' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'csr_r_data' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'mstatus_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'mcause_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'mepc_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'mtval_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'mtvec_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'mie_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'mip_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7023] instance 'uart_inst' of module 'UART' has 75 connections declared, but only 37 given [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+INFO: [Synth 8-6155] done synthesizing module 'CSSTE' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:22]
+WARNING: [Synth 8-6014] Unused sequential element rst_char_wait_count_reg was removed.  [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/uart_display.v:392]
+WARNING: [Synth 8-3848] Net is_transmitting in module/entity uart_display does not have driver. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/uart_display.v:134]
+WARNING: [Synth 8-3848] Net rst_is_transmitting in module/entity uart_display does not have driver. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/uart_display.v:134]
+WARNING: [Synth 8-3848] Net Blue in module/entity CSSTE does not have driver. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:27]
+WARNING: [Synth 8-3848] Net Green in module/entity CSSTE does not have driver. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:28]
+WARNING: [Synth 8-3848] Net Red in module/entity CSSTE does not have driver. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:29]
+WARNING: [Synth 8-3848] Net HSYNC in module/entity CSSTE does not have driver. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:30]
+WARNING: [Synth 8-3848] Net VSYNC in module/entity CSSTE does not have driver. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:31]
+WARNING: [Synth 8-7129] Port str_idx[11] in module string_to_print is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLKB in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[31] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[30] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[29] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[28] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[27] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[26] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[25] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[24] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[23] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[22] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[21] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[20] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[19] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[18] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[17] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[16] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[15] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[14] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[13] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[12] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[11] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[10] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[9] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[8] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[7] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[6] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[5] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[4] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[3] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[2] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[1] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB_I[0] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SBITERR_I in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DBITERR_I in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[9] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[8] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[7] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[6] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[5] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[4] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[3] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[2] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[1] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RDADDRECC_I[0] in module blk_mem_output_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[35] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[34] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[33] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[32] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[31] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[30] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[29] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[28] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[27] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[26] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[25] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[24] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[23] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[22] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[21] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[20] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[19] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[18] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[17] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[16] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[15] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[14] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[13] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[12] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[11] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[10] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[9] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[8] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[7] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[6] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[5] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[4] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[3] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[2] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[1] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DOUTB[0] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SBITERR in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DBITERR in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSRA in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CLKB in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SSRB in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ENB in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port REGCEB in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEB[3] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEB[2] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEB[1] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEB[0] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[9] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[8] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[7] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[6] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[5] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[4] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDRB[3] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:50 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:28 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:50 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:28 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:50 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1549.574 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.272 . Memory (MB): peak = 1566.617 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 41 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc]
-WARNING: [Vivado 12-584] No ports matched 'clk_100mhz'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:1]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:1]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'clk_100mhz'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:2]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:2]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'RSTN'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:3]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:3]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'RSTN'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:4]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:4]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'tx'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:7]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:7]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[0]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:11]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:11]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[1]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:12]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:12]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[2]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:13]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:13]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[3]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:14]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:14]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[4]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:15]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:15]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[5]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:16]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:16]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[6]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:17]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:17]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[7]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:18]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:18]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[8]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:19]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:19]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[9]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:20]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:20]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[10]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:21]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:21]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[11]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:22]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:22]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[12]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:23]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:23]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[13]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:24]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:24]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[14]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:25]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:25]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'SW[15]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:26]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:26]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[0]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:28]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:28]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[1]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:29]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:29]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[2]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:30]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:30]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[3]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:31]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:31]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[4]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:32]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:32]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[5]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:33]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:33]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[6]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:34]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:34]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[7]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:35]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:35]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[8]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:36]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:36]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[9]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:37]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:37]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[10]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:38]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:38]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[11]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:39]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:39]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[12]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:40]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:40]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[13]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:41]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:41]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[14]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:42]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:42]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'LED_out[15]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:43]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:43]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'segment[7]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:45]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:45]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'segment[6]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:46]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:46]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'segment[5]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:47]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:47]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'segment[4]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:48]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:48]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'segment[3]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:49]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:49]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'segment[2]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:50]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:50]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'segment[1]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:51]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:51]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'segment[0]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:52]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:52]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[0]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:53]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:53]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[1]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:54]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:54]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[2]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:55]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:55]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[3]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:56]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:56]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[4]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:57]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:57]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[5]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:58]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:58]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[6]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:59]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:59]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'AN[7]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:60]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:60]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTN_y[0]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:62]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:62]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTN_y[1]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:63]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:63]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTN_y[2]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:64]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:64]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BTN_y[3]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:65]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:65]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Red[0]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:67]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:67]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Red[1]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:68]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:68]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Red[2]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:69]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:69]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Red[3]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:70]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:70]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Green[0]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:71]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:71]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Green[1]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:72]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:72]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Green[2]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:73]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:73]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Green[3]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:74]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:74]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Blue[0]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:75]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:75]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Blue[1]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:76]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:76]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Blue[2]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:77]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:77]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'Blue[3]'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:78]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:78]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'HSYNC'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:79]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:79]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'VSYNC'. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:80]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc:80]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/constrs_1/imports/OExp02-IP2SOC/A7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/CSSTE_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/CSSTE_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1549.574 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1566.617 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 40 instances were transformed.
+  AND2 => LUT2: 1 instance 
+  AND3 => LUT3: 11 instances
+  AND4 => LUT4: 9 instances
+  INV => LUT1: 5 instances
+  OR2 => LUT2: 7 instances
+  OR3 => LUT3: 3 instances
+  OR4 => LUT4: 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1549.574 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1566.617 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Vivado/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:36 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:01:09 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:36 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:01:09 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for u2. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for u1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U6. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U2. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U3. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:36 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:01:09 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Preparing Guide Design
----------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6895] The reference checkpoint D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/utils_1/imports/synth_1/CSSTE.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
----------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:16 ; elapsed = 00:00:36 . Memory (MB): peak = 1549.574 ; gain = 744.605
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:16 ; elapsed = 00:00:36 . Memory (MB): peak = 1549.574 ; gain = 744.605
----------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'print_state_reg' in module 'uart_display'
 WARNING: [Synth 8-327] inferring latch for variable 'ImmSel_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:47]
 WARNING: [Synth 8-327] inferring latch for variable 'ALUSrc_B_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:48]
 WARNING: [Synth 8-327] inferring latch for variable 'MemtoReg_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:49]
@@ -601,55 +462,81 @@ WARNING: [Synth 8-327] inferring latch for variable 'MemRW_reg' [D:/CS/ZJU_CO/OE
 WARNING: [Synth 8-327] inferring latch for variable 'ALU_Control_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:62]
 WARNING: [Synth 8-327] inferring latch for variable 'CPU_MIO_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:60]
 WARNING: [Synth 8-327] inferring latch for variable 'Imm_out_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/ImmGen.v:33]
-WARNING: [Synth 8-327] inferring latch for variable 'PC_next_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:172]
-WARNING: [Synth 8-327] inferring latch for variable 'Tem_Data_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:155]
-WARNING: [Synth 8-327] inferring latch for variable 'Tem_wea_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:154]
-WARNING: [Synth 8-327] inferring latch for variable 'Wt_data_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:93]
-WARNING: [Synth 8-327] inferring latch for variable 'Tem_mem_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:153]
+WARNING: [Synth 8-327] inferring latch for variable 'PC_next_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:200]
+WARNING: [Synth 8-327] inferring latch for variable 'Tem_Data_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:160]
+WARNING: [Synth 8-327] inferring latch for variable 'Tem_wea_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:159]
+WARNING: [Synth 8-327] inferring latch for variable 'Wt_data_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:95]
+WARNING: [Synth 8-327] inferring latch for variable 'Tem_mem_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:158]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              PRINT_IDLE |                   00000000000001 |                             0000
+          PRINT_STR_INIT |                   00000000000010 |                             0001
+       PRINT_SEND_CHAR_0 |                   00000000000100 |                             0010
+         PRINT_SEND_CHAR |                   00000000001000 |                             0011
+        PRINT_WAIT_RDY_0 |                   00000000010000 |                             0100
+          PRINT_WAIT_RDY |                   00000000100000 |                             0101
+         PRINT_CHAR_WAIT |                   00000001000000 |                             0110
+             PRINT_RESET |                   00000010000000 |                             1001
+ PRINT_RESET_SEND_CHAR_0 |                   00000100000000 |                             1010
+   PRINT_RESET_SEND_CHAR |                   00001000000000 |                             1011
+  PRINT_RESET_WAIT_RDY_0 |                   00010000000000 |                             1100
+    PRINT_RESET_WAIT_RDY |                   00100000000000 |                             1101
+        PRINT_DELAY_WAIT |                   01000000000000 |                             0111
+         PRINT_ROUND_END |                   10000000000000 |                             1000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'print_state_reg' using encoding 'one-hot' in module 'uart_display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:36 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:01:35 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
-
-
-Incremental Synthesis Report Summary:
-
-1. Incremental synthesis run: no
-
-   Reason for not running incremental synthesis : 
-
-
-INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   32 Bit       Adders := 4     
+	   2 Input   32 Bit       Adders := 6     
 	   3 Input   32 Bit       Adders := 1     
+	   2 Input   14 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 448   
+	   2 Input    4 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               32 Bit    Registers := 33    
+	               14 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 4     
+	   2 Input   32 Bit        Muxes := 66    
 	  11 Input   32 Bit        Muxes := 1     
-	   4 Input   32 Bit        Muxes := 4     
+	   4 Input   32 Bit        Muxes := 7     
 	   7 Input   32 Bit        Muxes := 1     
+	   3 Input   14 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 8     
+	   4 Input   14 Bit        Muxes := 1     
+	  14 Input   14 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 2     
+	   8 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 1     
 	   8 Input    4 Bit        Muxes := 2     
 	   7 Input    4 Bit        Muxes := 1     
 	  10 Input    4 Bit        Muxes := 1     
-	   4 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 2     
 	  10 Input    3 Bit        Muxes := 2     
 	   6 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
 	  10 Input    2 Bit        Muxes := 2     
+	   7 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
 	  10 Input    1 Bit        Muxes := 5     
 	  11 Input    1 Bit        Muxes := 6     
 	   6 Input    1 Bit        Muxes := 4     
-	   2 Input    1 Bit        Muxes := 33    
-	   4 Input    1 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 68    
+	   4 Input    1 Bit        Muxes := 8     
 	  16 Input    1 Bit        Muxes := 1     
-	   7 Input    1 Bit        Muxes := 1     
+	  14 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -666,109 +553,37 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/ImmSel_reg[2]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/ImmSel_reg[1]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/ImmSel_reg[0]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/ALUSrc_B_reg) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/MemtoReg_reg[2]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/MemtoReg_reg[1]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/MemtoReg_reg[0]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/Jump_reg[1]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/Jump_reg[0]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/Branch_Beq_reg) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/Branch_Bne_reg) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/Branch_Blt_reg) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/Branch_Bltu_reg) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/Branch_Bge_reg) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/Branch_Bgeu_reg) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/Length_reg[2]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/Length_reg[1]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/Length_reg[0]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/RegWrite_reg) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/MemRW_reg) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/ALU_Control_reg[3]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/ALU_Control_reg[2]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/ALU_Control_reg[1]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/ALU_Control_reg[0]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/SCPU_ctrl1/CPU_MIO_reg) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[31]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[30]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[29]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[28]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[27]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[26]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[25]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[24]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[23]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[22]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[21]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[20]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[19]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[18]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[17]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[16]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[15]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[14]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[13]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[12]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[11]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[10]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[9]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[8]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[7]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[6]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[5]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[4]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[3]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[2]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[1]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/U2/Imm_out_reg[0]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[31]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[30]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[29]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[28]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[27]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[26]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[25]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[24]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[23]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[22]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[21]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[20]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[19]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[18]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[17]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[16]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[15]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[14]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[13]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[12]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[11]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[10]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[9]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[8]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[7]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[6]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[5]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[4]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[3]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[2]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[1]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/PC_next_reg[0]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/Tem_Data_reg[31]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/Tem_Data_reg[30]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/Tem_Data_reg[29]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/Tem_Data_reg[28]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/Tem_Data_reg[27]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/Tem_Data_reg[26]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/Tem_Data_reg[25]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/Tem_Data_reg[24]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/Tem_Data_reg[23]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/Tem_Data_reg[22]) is unused and will be removed from module testbench.
-WARNING: [Synth 8-3332] Sequential element (u0/DataPath1/Tem_Data_reg[21]) is unused and will be removed from module testbench.
-INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (U1/SCPU_ctrl1/CPU_MIO_reg) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[31]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[30]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[29]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[28]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[27]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[26]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[25]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[24]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[23]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[22]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[21]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[20]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[19]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[18]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[17]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[16]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[15]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[14]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[13]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[12]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[11]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[10]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[9]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[8]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[7]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[6]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[5]) is unused and will be removed from module CSSTE.
+WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[4]) is unused and will be removed from module CSSTE.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:40 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:02:27 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -778,8 +593,8 @@ ROM: Preliminary Mapping Report
 +---------------------+--------------------------------------------------------+---------------+----------------+
 |Module Name          | RTL Object                                             | Depth x Width | Implemented As | 
 +---------------------+--------------------------------------------------------+---------------+----------------+
-|rom                  | rom[1023]                                              | 1024x30       | LUT            | 
-|dist_mem_gen_v8_0_13 | synth_options.dist_mem_inst/gen_rom.rom_inst/rom[1023] | 1024x30       | LUT            | 
+|rom                  | rom[1023]                                              | 1024x31       | LUT            | 
+|dist_mem_gen_v8_0_13 | synth_options.dist_mem_inst/gen_rom.rom_inst/rom[1023] | 1024x31       | LUT            | 
 +---------------------+--------------------------------------------------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
@@ -789,19 +604,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:45 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:02:33 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:45 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:02:34 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:45 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:02:35 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -818,79 +633,139 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U9 has unconnected pin readn
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:49 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:02:40 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:49 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:02:40 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:49 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:02:40 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:49 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:02:41 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:49 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:02:41 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:49 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:02:41 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |SAnti_jitter  |         1|
+|2     |clk_div       |         1|
+|3     |Counter_x     |         1|
+|4     |MIO_BUS       |         1|
+|5     |Multi_8CH32   |         1|
+|6     |SPIO          |         1|
++------+--------------+----------+
 
 Report Cell Usage: 
-+-+-----+------+
-| |Cell |Count |
-+-+-----+------+
-+-+-----+------+
++------+------------------+------+
+|      |Cell              |Count |
++------+------------------+------+
+|1     |Counter_x_bbox    |     1|
+|2     |MIO_BUS_bbox      |     1|
+|3     |Multi_8CH32_bbox  |     1|
+|4     |SAnti_jitter_bbox |     1|
+|5     |SPIO_bbox         |     1|
+|6     |clk_div_bbox      |     1|
+|7     |AND2              |     1|
+|8     |AND3              |    11|
+|9     |AND4              |     9|
+|10    |BUFG              |     5|
+|11    |CARRY4            |    80|
+|12    |INV               |     5|
+|13    |LUT1              |    21|
+|14    |LUT2              |   262|
+|15    |LUT3              |   505|
+|16    |LUT4              |   550|
+|17    |LUT5              |   409|
+|18    |LUT6              |  2235|
+|19    |MUXF7             |   381|
+|20    |MUXF8             |    72|
+|21    |OR2               |     7|
+|22    |OR3               |     3|
+|23    |OR4               |     4|
+|24    |RAMB36E1          |     1|
+|25    |FDCE              |    32|
+|26    |FDRE              |  1147|
+|27    |LD                |   176|
+|28    |IBUF              |    22|
+|29    |OBUF              |    33|
+|30    |OBUFT             |    14|
++------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:49 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:02:41 . Memory (MB): peak = 1566.617 ; gain = 760.770
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 1 critical warnings and 597 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:47 . Memory (MB): peak = 1549.574 ; gain = 744.605
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:49 . Memory (MB): peak = 1549.574 ; gain = 744.605
+Synthesis finished with 0 errors, 1 critical warnings and 424 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:02:34 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:02:41 . Memory (MB): peak = 1566.617 ; gain = 760.770
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1549.574 ; gain = 0.000
+Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/SAnti_jitter.edf]
+Finished Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/SAnti_jitter.edf]
+Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/clk_div.edf]
+Finished Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/clk_div.edf]
+Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Counter_x.edf]
+Finished Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Counter_x.edf]
+Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/MIO_BUS.edf]
+Finished Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/MIO_BUS.edf]
+Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Multi_8CH32.edf]
+Finished Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Multi_8CH32.edf]
+Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/SPIO.edf]
+Finished Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/SPIO.edf]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 1566.617 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 848 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1549.574 ; gain = 0.000
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 2 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1566.617 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 216 instances were transformed.
+  AND2 => LUT2: 1 instance 
+  AND3 => LUT3: 11 instances
+  AND4 => LUT4: 9 instances
+  INV => LUT1: 5 instances
+  LD => LDCE: 176 instances
+  OR2 => LUT2: 7 instances
+  OR3 => LUT3: 3 instances
+  OR4 => LUT4: 4 instances
 
-Synth Design complete, checksum: 20fb2574
+Synth Design complete, checksum: ded70312
 INFO: [Common 17-83] Releasing license: Synthesis
-61 Infos, 326 Warnings, 77 Critical Warnings and 0 Errors encountered.
+109 Infos, 211 Warnings, 6 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:54 . Memory (MB): peak = 1549.574 ; gain = 1138.992
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:03:06 . Memory (MB): peak = 1566.617 ; gain = 1158.605
 INFO: [Common 17-600] The following parameters have non-default value.
 general.maxThreads
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 [libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
 [libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
 [libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
-INFO: [Common 17-1381] The checkpoint 'D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.runs/synth_1/testbench.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file testbench_utilization_synth.rpt -pb testbench_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun May  5 15:44:26 2024...
+INFO: [Common 17-1381] The checkpoint 'D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.runs/synth_1/CSSTE.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file CSSTE_utilization_synth.rpt -pb CSSTE_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon May  6 18:14:58 2024...
