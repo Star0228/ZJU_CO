@@ -24,7 +24,9 @@ module SCPU_ctrl_W(
   input [4:0]       OPcode, 
   input [2:0]       Fun3,
   input             Fun7,
+  input [1:0]       mert_check,
   input             MIO_ready,
+  input int,
   output reg [2:0]  ImmSel,
   output reg        ALUSrc_B,
   output reg [2:0]  MemtoReg,
@@ -39,7 +41,13 @@ module SCPU_ctrl_W(
   output reg        RegWrite,
   output reg        MemRW,
   output reg [3:0]  ALU_Control,
-  output reg        CPU_MIO
+  output reg        CPU_MIO,
+
+  output  reg     CsrWrite,         // CSR 写使能信号
+  output    reg   INT,              // 外部中断信号
+  output    reg   ecall,            // ECALL 指令
+  output   reg    mret,             // MRET 指令
+  output   reg    illegal_inst     // 非法指令信号
     );
 always@(*)begin
     case(OPcode)
@@ -231,10 +239,39 @@ always@(*)begin
             CPU_MIO <= 1'b0;
             ALU_Control <= 4'b0000;
         end
-
-
-
+        5'b11100:begin
+            ImmSel <= 3'b101;
+            ALUSrc_B <= 1'b0;
+            MemtoReg <=  3'b101;
+            Jump <= 2'b00;
+            Branch_Beq <= 1'b0;
+            Branch_Bne <= 1'b0;
+            Branch_Blt <= 1'b0;
+            Branch_Bltu <= 1'b0;
+            Branch_Bge <= 1'b0;
+            Branch_Bgeu <= 1'b0;
+            Length <= 3'b000;
+            RegWrite <=  (Fun3==3'b000)?1'b0:1'b1;
+            CsrWrite <= (Fun3==3'b000)?1'b0:1'b1;
+            MemRW <= 1'b0;
+            CPU_MIO <= 1'b0;
+            ALU_Control <= 4'b0000;
+            if(Fun3==3'b000)begin
+            mret <= (mert_check==2'b11)?1'b1:1'b0;
+            ecall<=(mert_check == 2'b11)?1'b0:1'b1;
+            illegal_inst<=1'b0;
+            end
+        end
+    default:illegal_inst <= 1'b1;
     endcase
+    if(OPcode==5'b01100||OPcode==5'b00100||OPcode==5'b00000||OPcode==5'b11001||OPcode==5'b01000||OPcode==5'b11000||OPcode==5'b11011||OPcode==5'b01101||OPcode==5'b00101)begin
+        illegal_inst <= 1'b0;
+        mret <= 1'b0;
+        ecall<=1'b0;
+    end
+    assign INT = int;
+     //   output       ecall,            // ECALL 指令
+
 
 
 

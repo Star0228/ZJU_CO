@@ -24,6 +24,7 @@ module SCPU_W_1(
   input wire clk,
   input wire rst,
   input wire MIO_ready,
+  input wire int,
   input wire [31:0]inst_in,
   input wire [31:0]Data_in,
   output wire CPU_MIO,
@@ -83,10 +84,18 @@ module SCPU_W_1(
   wire     Branch_Bgeu;
   wire     [2:0]  Length;
 
+wire illegal_inst;
+wire ecall;
+wire mret;
+wire CsrWrite;
+wire INT;
+
   SCPU_ctrl_W SCPU_ctrl1(
     .OPcode(inst_in[6:2]), 
     .Fun3(inst_in[14:12]), 
     .Fun7(inst_in[30]),
+    .int(int),
+    .mert_check(inst_in[29:28]),
     .MIO_ready(MIO_ready), 
     .ImmSel(ImmSel), 
     .ALUSrc_B(ALUSrc_B), 
@@ -102,6 +111,11 @@ module SCPU_W_1(
     .RegWrite(RegWrite), 
     .MemRW(MemRW), 
     .ALU_Control(ALU_Control), 
+    .illegal_inst(illegal_inst),
+    .ecall(ecall),
+    .mret(mret),
+    .CsrWrite(CsrWrite),  
+    .INT(INT),
     .CPU_MIO(CPU_MIO)
     );
   DataPath_W DataPath1(
@@ -125,6 +139,11 @@ module SCPU_W_1(
     .PC_out(PC_out), 
     .Data_out(Data_out), 
     .ALU_out(Addr_out),
+    .illegal_inst(illegal_inst),
+    .ecall(ecall),
+    .mret(mret),
+    .INT(INT),
+    .CsrWrite(CsrWrite),
     .wea(wea),
     .Reg00(Reg00),
     .Reg01(Reg01),

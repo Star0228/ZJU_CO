@@ -40,6 +40,11 @@ module DataPath_W(
   input     [2:0]  Length,
   input     RegWrite,
   input  [3:0] ALU_Control,
+  input CsrWrite,
+  input INT,
+    input ecall,
+    input mret,
+    input illegal_inst,
 
   output reg [31:0]PC_out,//next PC/NOW PC
   output wire [31:0]Data_out,//store data out
@@ -130,6 +135,28 @@ Regs U1(
     .Reg31(Reg31)
 );
 
+wire [31:0]CSR_rdata;
+reg[31:0]tem_CSR_wdata;
+wire [31:0]CSR_wdata; 
+assign CSR_wdata =tem_CSR_wdata;
+wire [31:0]tem_PC_next;
+reg [31:0]PC_next;
+wire tem_mstatus;
+RV_INT U4(
+  .clk(clk),
+  .rst(rst),
+  .INT(INT),
+  .CsrWrite(CsrWrite),
+  .CSR_add(inst_field[31:20]),
+    .CSR_wdata(CSR_wdata),
+    .CSR_rdata(CSR_rdata),
+  .mret(mret),
+  .ecall(ecall),
+  .illegal_inst(illegal_inst),
+  .pc_current(PC_out),
+  .tem_mstatus(tem_mstatus),
+  .pc(tem_PC_next)
+);
 
 
 wire [31:0] Imm_out;
@@ -152,13 +179,21 @@ ALU U3(
 wire Branch = (Branch_Beq&zero)|(Branch_Bne&(~zero))|(Branch_Blt&ALU_out[0])|(Branch_Bltu&ALU_out[0])|(Branch_Bge&(~ALU_out[0]))|(Branch_Bgeu&(~ALU_out[0]));
 wire [31:0] PC_Jal = PC_out+Ior2;
 wire [31:0] PC_Branch = Branch?PC_out+Imm_out:PC_out+32'd4;
-reg [31:0]PC_next;
+
 wire [31:0] reg_mem;
 reg [31:0] Tem_mem,Tem_wea,Tem_Data;
 assign reg_mem = Tem_mem;
 assign wea = Tem_wea;
 assign Data_out = Tem_Data;
 always @(*)begin
+  case(inst_field[14:12])
+      3'b001:tem_CSR_wdata<=Rs1_data;
+      3'b010:tem_CSR_wdata<=Rs1_data|CSR_rdata;
+      3'b011:tem_CSR_wdata<=(~Rs1_data)&CSR_rdata;
+      3'b101:tem_CSR_wdata<=Imm_out;
+      3'b110:tem_CSR_wdata<=CSR_rdata|Imm_out;
+      3'b111:tem_CSR_wdata<=CSR_rdata&(~Imm_out);
+  endcase
   case(Length)
     3'b000: 
     case(ALU_out[1:0])
@@ -195,6 +230,7 @@ always @(*)begin
     3'b010: Wt_data <= PC_out+32'd4;
     3'b011: Wt_data <= Imm_out<<12;
     3'b100: Wt_data <= PC_out+(Imm_out<<12);
+    3'b101: Wt_data <= CSR_rdata;
   endcase
   case(Jump)
     2'b00: PC_next <= PC_Branch;
@@ -243,9 +279,13 @@ always @(*)begin
     Tem_Data <= Rs2_data;
     end
   endcase
+
 end
 always @(posedge clk or posedge rst)begin
   if(rst)PC_out<=32'd0;
+  else if(tem_mstatus||mret)begin
+    PC_out<=tem_PC_next;
+  end
   else PC_out<=PC_next;
 end
 

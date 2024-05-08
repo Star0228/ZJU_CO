@@ -37,6 +37,8 @@ verilog xil_defaultlib  \
 "../../../../OExp02-IP2SOC.srcs/sources_1/imports/lab4´®¿Ú/UART.v" \
 "../../../../OExp02-IP2SOC.srcs/sources_1/imports/lab4´®¿Ú/string_to_print.v" \
 "../../../../OExp02-IP2SOC.srcs/sources_1/new/testbench.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/new/RV_INT.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/new/CSRRegs.v" \
 "../../../../OExp02-IP2SOC.srcs/sim_1/new/testbench_tb.v" \
 
 # compile glbl module

@@ -76,7 +76,8 @@ wire [3:0]wea;
 wire        CPU_MIO;
 wire [31:0]Reg00,Reg01,Reg02,Reg03,Reg04,Reg05,Reg06,Reg07,Reg08,Reg09,Reg10,Reg11,Reg12,Reg13,Reg14,Reg15,Reg16,Reg17,Reg18,Reg19,Reg20,Reg21,Reg22,Reg23,Reg24,Reg25,Reg26,Reg27,Reg28,Reg29,Reg30,Reg31;
 SCPU_W_1 U1(
-    .clk(U8_clkcpu), 
+    .clk(U8_clkcpu),
+    .int(SW[15]), 
     .rst(U9_rst), 
     .inst_in(U2_spo), 
     .Data_in(U3_douta), 

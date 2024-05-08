@@ -35,6 +35,7 @@ case (ImmSel)
     3'd2: Imm_out = {{19{inst_field[31]}},inst_field[31],inst_field[7],inst_field[30:25],inst_field[11:8],1'b0};
     3'd3: Imm_out = {{12{inst_field[31]}},inst_field[31:12]};
     3'd4: Imm_out = {{11{inst_field[31]}},inst_field[31],inst_field[19:12],inst_field[20],inst_field[30:21],1'b0};
+    3'd5: Imm_out = {27'b0,inst_field[19:15]};
 endcase
 end
 

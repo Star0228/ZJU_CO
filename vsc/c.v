@@ -24,6 +24,7 @@ module SCPU_ctrl_W(
   input [4:0]       OPcode, 
   input [2:0]       Fun3,
   input             Fun7,
+  input [1:0]       mert_check,
   input             MIO_ready,
   output reg [2:0]  ImmSel,
   output reg        ALUSrc_B,
@@ -39,7 +40,13 @@ module SCPU_ctrl_W(
   output reg        RegWrite,
   output reg        MemRW,
   output reg [3:0]  ALU_Control,
-  output reg        CPU_MIO
+  output reg        CPU_MIO,
+
+  output       CsrWrite,         // CSR 写使能信号
+  output       INT,              // 外部中断信号
+  output       ecall,            // ECALL 指令
+  output       mret,             // MRET 指令
+  output       illegal_inst,     // 非法指令信号
     );
 always@(*)begin
     case(OPcode)
@@ -64,7 +71,7 @@ always@(*)begin
                 3'b010: ALU_Control <= 4'b0011;
                 3'b011: ALU_Control <= 4'b0100;
                 3'b100: ALU_Control <= 4'b0101;
-                3'b101: ALU_Control <= 4'b0110;
+                3'b101: ALU_Control <= Fun7?4'b0111:4'b0110;
                 3'b110: ALU_Control <= 4'b1000;
                 3'b111: ALU_Control <= 4'b1001;
             endcase
@@ -106,7 +113,7 @@ always@(*)begin
             Branch_Bltu <= 1'b0;
             Branch_Bge <= 1'b0;
             Branch_Bgeu <= 1'b0;
-            RegWrite <= 1'b0;
+            RegWrite <= 1'b1;
             MemRW <= 1'b0;
             CPU_MIO <= 1'b0;
             ALU_Control <= 4'b0000; 
@@ -138,7 +145,7 @@ always@(*)begin
         5'b01000:begin
             ImmSel <= 3'b001;
             ALUSrc_B <= 1'b1;
-            MemtoReg <= 3'b000;
+            MemtoReg <= 3'b001;
             Jump <= 2'b00;
             Branch_Beq <= 1'b0;
             Branch_Bne <= 1'b0;
@@ -231,10 +238,31 @@ always@(*)begin
             CPU_MIO <= 1'b0;
             ALU_Control <= 4'b0000;
         end
-
-
-
+        5'b11100:begin
+            ImmSel <= 3'b101;
+            ALUSrc_B <= 1'b0;
+            MemtoReg <=  3'b101;
+            Jump <= 2'b00;
+            Branch_Beq <= 1'b0;
+            Branch_Bne <= 1'b0;
+            Branch_Blt <= 1'b0;
+            Branch_Bltu <= 1'b0;
+            Branch_Bge <= 1'b0;
+            Branch_Bgeu <= 1'b0;
+            Length <= 3'b000;
+            RegWrite <=  (Fun3==3'b000)?1'b0:1'b1;
+            CsrWrite <= (Fun3==3'b000)?1'b0:1'b1;
+            MemRW <= 1'b0;
+            CPU_MIO <= 1'b0;
+            ALU_Control <= 4'b0000;
+            mret <= (Fun3==3'b000)1'b1:1'b0;
+        end
+    default:illegal_inst <= 1'b1;
     endcase
+
+    assign INT = SW[15];
+     //   output       ecall,            // ECALL 指令
+
 
 
 
