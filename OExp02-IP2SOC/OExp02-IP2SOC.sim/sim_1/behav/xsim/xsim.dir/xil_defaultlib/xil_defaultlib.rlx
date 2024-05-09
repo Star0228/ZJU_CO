@@ -2,12 +2,12 @@
 2020.2
 Oct 14 2022
 05:20:55
-D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/RAM_1/sim/RAM_1.v,1714879657,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/UART/UART.v,,RAM_1,,,,,,,,
-D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/ROM_1/sim/ROM_1.v,1715220545,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/RAM_1/sim/RAM_1.v,,ROM_1,,,,,,,,
-D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/DisplaySync.v,1710306980,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/MC_14495.v,,dispsync,,,,,,,,
-D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/MC_14495.v,1710306980,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/Seg7_Dev.v,,MC_14495,,,,,,,,
-D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/Seg7_Dev.v,1710306980,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/sim/Seg7_Dev_0.v,,Seg7_Dev,,,,,,,,
-D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/sim/Seg7_Dev_0.v,1710306980,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Counter_x.v,,Seg7_Dev_0,,,,,,,,
+D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/RAM_1/sim/RAM_1.v,1715243158,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/UART/UART.v,,RAM_1,,,,,,,,
+D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/ROM_1/sim/ROM_1.v,1715243156,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/RAM_1/sim/RAM_1.v,,ROM_1,,,,,,,,
+D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/DisplaySync.v,1715243153,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/MC_14495.v,,dispsync,,,,,,,,
+D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/MC_14495.v,1715243153,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/Seg7_Dev.v,,MC_14495,,,,,,,,
+D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/Seg7_Dev.v,1715243153,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/sim/Seg7_Dev_0.v,,Seg7_Dev,,,,,,,,
+D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/sim/Seg7_Dev_0.v,1715243153,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Counter_x.v,,Seg7_Dev_0,,,,,,,,
 D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
 D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sim_1/new/testbench_tb.v,1714883063,verilog,,,,testbench_tb,,,,,,,,
 D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Counter_x.v,1710292184,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/new/Hex2Ascii.v,,Counter_x,,,,,,,,
@@ -38,7 +38,7 @@ D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v,1715236429,v
 D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath.v,1714837995,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v,,,,,,,,,,
 D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v,1715221484,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/Lab4-0-attachment/DataPath.v,,DataPath_W,,,,,,,,
 D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/ImmGen.v,1715092441,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/new/ALU.v,,ImmGen,,,,,,,,
-D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/RV_INT.v,1715176839,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSRRegs.v,,RV_INT,,,,,,,,
+D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/RV_INT.v,1715237582,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSRRegs.v,,RV_INT,,,,,,,,
 D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_W.v,1714736477,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/DisplaySync.v,,SCPU_W,,,,,,,,
 D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_W_1.v,1715230939,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4´®¿Ú/uart_display.v,,SCPU_W_1,,,,,,,,
 D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v,1715172922,verilog,,D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath.v,,SCPU_ctrl_W,,,,,,,,
