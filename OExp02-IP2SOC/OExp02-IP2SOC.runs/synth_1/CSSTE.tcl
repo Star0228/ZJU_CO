@@ -71,7 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.maxThreads 8
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -98,6 +97,9 @@ add_files D:/CS/ZJU_CO/doc/Lab2-attachment/OExp02-IP2SOC/I_mem.coe
 add_files D:/CS/ZJU_CO/doc/Lab2-attachment/OExp02-IP2SOC/D_mem.coe
 add_files D:/CS/ZJU_CO/doc/Lab4-0-attachment/IMem_4_2.coe
 add_files D:/CS/ZJU_CO/doc/Lab4-0-attachment/IMem_4_3.coe
+add_files D:/CS/ZJU_CO/doc/Lab4-0-attachment/IMem_4_4.coe
+add_files D:/CS/ZJU_CO/doc/Lab4-0-attachment/Imem_4-4_xr.coe
+add_files D:/CS/ZJU_CO/doc/Lab4-0-attachment/IMem4_4wxy.coe
 read_verilog -library xil_defaultlib {
   D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_W.v
   D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Counter_x.v
@@ -130,6 +132,8 @@ read_verilog -library xil_defaultlib {
   D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4´®¿Ú/UART.v
   D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4´®¿Ú/string_to_print.v
   D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/testbench.v
+  D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/RV_INT.v
+  D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSRRegs.v
 }
 read_ip -quiet D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/ip/Seg7_Dev_0/Seg7_Dev_0.xci
 

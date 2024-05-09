@@ -41,7 +41,7 @@ module RV_INT(
 
 
 
-    output   reg    en,              // ���ڿ��ƼĴ����ѡ��ڴ��������дʹ��
+    output   reg    en,              // ���ڿ��ƼĴ����ѡ��ڴ��������дʹ��?
     output reg [31:0] pc               // ��ִ�е�ָ�� PC ֵ
 );
 
@@ -59,12 +59,7 @@ CSRRegs U4(
     .mtvec(mtvec),
     .mcause(mcause),
     .mtval(mtval),
-    .mepc(mepc),
-    .csr_wsc_mode(2'b00),
-    .expt_int(1'b0),
-    .mepc_bypasss_in(32'b0),
-    .mscause_bypass_in(32'b0),
-    .mtval_bypass_in(32'b0)
+    .mepc(mepc)
 );
 initial begin
     tem_mstatus<=1'b0;

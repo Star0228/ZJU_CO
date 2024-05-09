@@ -74,6 +74,7 @@ ROM_1 U2(
 //SCPU_W U1(.clk(U8_clkcpu), .rst(U9_rst), .inst_in(U2_spo), .Data_in(U4_cpu), .MemRW(U1_memrw), .PC_out(U1_pc), .Data_out(U1_data), .Addr_out(U1_add));
 wire [3:0]wea;
 wire        CPU_MIO;
+wire [31:0]mstatus,mtvec,mcause,mtval,mepc; 
 wire [31:0]Reg00,Reg01,Reg02,Reg03,Reg04,Reg05,Reg06,Reg07,Reg08,Reg09,Reg10,Reg11,Reg12,Reg13,Reg14,Reg15,Reg16,Reg17,Reg18,Reg19,Reg20,Reg21,Reg22,Reg23,Reg24,Reg25,Reg26,Reg27,Reg28,Reg29,Reg30,Reg31;
 SCPU_W_1 U1(
     .clk(U8_clkcpu),
@@ -88,6 +89,11 @@ SCPU_W_1 U1(
     .Data_out(U1_data), 
     .Addr_out(U1_add),
 .wea(wea),
+.mstatus(mstatus),
+.mtvec(mtvec),
+.mcause(mcause),
+.mtval(mtval),
+.mepc(mepc),
 .Reg00(Reg00),
 .Reg01(Reg01),
 .Reg02(Reg02),
@@ -144,6 +150,14 @@ UART uart_inst(
     .tx(tx), 
     .pc(U1_pc), 
     .inst(U2_spo),
+    .mstatus_o(mstatus),
+    .mcause_o(mcause),
+    .mepc_o(mepc),
+    .mtval_o(mtval),
+    .mtvec_o(mtvec),
     .x0(Reg00),
-    .ra(Reg01),.sp(Reg02),.gp(Reg03),.tp(Reg04),.t0(Reg05),.t1(Reg06),.t2(Reg07),.s0(Reg08),.s1(Reg09),.a0(Reg10),.a1(Reg11),.a2(Reg12),.a3(Reg13),.a4(Reg14),.a5(Reg15),.a6(Reg16),.a7(Reg17),.s2(Reg18),.s3(Reg19),.s4(Reg20),.s5(Reg21),.s6(Reg22),.s7(Reg23),.s8(Reg24),.s9(Reg25),.s10(Reg26),.s11(Reg27),.t3(Reg28),.t4(Reg29),.t5(Reg30),.t6(Reg31));
+    .ra(Reg01),.sp(Reg02),.gp(Reg03),.tp(Reg04),.t0(Reg05),.t1(Reg06),.t2(Reg07),.s0(Reg08),.s1(Reg09),.a0(Reg10),.a1(Reg11),.a2(Reg12),.a3(Reg13),
+    .a4(Reg14),.a5(Reg15),.a6(Reg16),.a7(Reg17),.s2(Reg18),.s3(Reg19),.s4(Reg20),.s5(Reg21),.s6(Reg22),.s7(Reg23),.s8(Reg24),.s9(Reg25),.s10(Reg26),
+    .s11(Reg27),.t3(Reg28),.t4(Reg29),.t5(Reg30),.t6(Reg31)
+    );
 endmodule

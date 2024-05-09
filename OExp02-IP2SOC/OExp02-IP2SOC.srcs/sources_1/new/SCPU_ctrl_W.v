@@ -43,7 +43,7 @@ module SCPU_ctrl_W(
   output reg [3:0]  ALU_Control,
   output reg        CPU_MIO,
 
-  output  reg     CsrWrite,         // CSR 写使能信号
+  output  reg     CsrWrite,         // CSR 写使能信�?
   output    reg   INT,              // 外部中断信号
   output    reg   ecall,            // ECALL 指令
   output   reg    mret,             // MRET 指令
@@ -269,7 +269,7 @@ always@(*)begin
         mret <= 1'b0;
         ecall<=1'b0;
     end
-    assign INT = int;
+     INT <= int;
      //   output       ecall,            // ECALL 指令
 
 

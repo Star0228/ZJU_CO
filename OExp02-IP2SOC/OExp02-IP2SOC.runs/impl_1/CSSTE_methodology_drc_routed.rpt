@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Mon May  6 18:17:19 2024
+| Date         : Thu May  9 14:38:31 2024
 | Host         : LAPTOP-0P208VUK running 64-bit major release  (build 9200)
 | Command      : report_methodology -file CSSTE_methodology_drc_routed.rpt -pb CSSTE_methodology_drc_routed.pb -rpx CSSTE_methodology_drc_routed.rpx
 | Design       : CSSTE
@@ -23,12 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 1177
+             Violations found: 1215
 +-----------+------------------+--------------------------------+------------+
 | Rule      | Severity         | Description                    | Violations |
 +-----------+------------------+--------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell    | 1000       |
-| TIMING-20 | Warning          | Non-clocked latch              | 176        |
+| LUTAR-1   | Warning          | LUT drives async reset alert   | 1          |
+| TIMING-20 | Warning          | Non-clocked latch              | 213        |
 | LATCH-1   | Advisory         | Existing latches in the design | 1          |
 +-----------+------------------+--------------------------------+------------+
 
@@ -5034,6 +5035,12 @@ Non-clocked sequential cell
 The clock pin U1/DataPath1/U1/tem_reg[9][16]/C is not reached by a timing clock
 Related violations: <none>
 
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell U1/SCPU_ctrl1/ecall_reg_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) U1/SCPU_ctrl1/ecall_reg/CLR, U1/SCPU_ctrl1/illegal_inst_reg/CLR
+U1/SCPU_ctrl1/mret_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
 TIMING-20#1 Warning
 Non-clocked latch  
 The latch U1/DataPath1/PC_next_reg[0] cannot be properly analyzed as its control pin U1/DataPath1/PC_next_reg[0]/G is not reached by a timing clock
@@ -5801,122 +5808,307 @@ Related violations: <none>
 
 TIMING-20#154 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/ALUSrc_B_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ALUSrc_B_reg/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[0] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#155 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/ALU_Control_reg[0] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ALU_Control_reg[0]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[10] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[10]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#156 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/ALU_Control_reg[1] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ALU_Control_reg[1]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[11] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[11]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#157 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/ALU_Control_reg[2] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ALU_Control_reg[2]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[12] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[12]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#158 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/ALU_Control_reg[3] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ALU_Control_reg[3]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[13] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[13]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#159 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/Branch_Beq_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Branch_Beq_reg/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[14] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[14]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#160 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/Branch_Bge_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Branch_Bge_reg/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[15] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[15]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#161 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/Branch_Bgeu_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Branch_Bgeu_reg/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[16] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[16]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#162 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/Branch_Blt_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Branch_Blt_reg/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[17] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[17]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#163 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/Branch_Bltu_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Branch_Bltu_reg/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[18] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[18]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#164 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/Branch_Bne_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Branch_Bne_reg/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[19] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[19]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#165 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/ImmSel_reg[0] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ImmSel_reg[0]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[1] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#166 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/ImmSel_reg[1] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ImmSel_reg[1]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[20] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[20]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#167 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/ImmSel_reg[2] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ImmSel_reg[2]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[21] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[21]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#168 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/Jump_reg[1] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Jump_reg[1]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[22] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[22]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#169 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/Length_reg[0] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Length_reg[0]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[23] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[23]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#170 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/Length_reg[1] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Length_reg[1]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[24] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[24]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#171 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/Length_reg[2] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Length_reg[2]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[25] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[25]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#172 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/MemRW_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/MemRW_reg/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[26] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[26]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#173 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/MemtoReg_reg[0] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/MemtoReg_reg[0]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[27] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[27]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#174 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/MemtoReg_reg[1] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/MemtoReg_reg[1]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[28] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[28]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#175 Warning
 Non-clocked latch  
-The latch U1/SCPU_ctrl1/MemtoReg_reg[2] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/MemtoReg_reg[2]/G is not reached by a timing clock
+The latch U1/DataPath1/tem_CSR_wdata_reg[29] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[29]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#176 Warning
 Non-clocked latch  
+The latch U1/DataPath1/tem_CSR_wdata_reg[2] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#177 Warning
+Non-clocked latch  
+The latch U1/DataPath1/tem_CSR_wdata_reg[30] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[30]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#178 Warning
+Non-clocked latch  
+The latch U1/DataPath1/tem_CSR_wdata_reg[31] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[31]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#179 Warning
+Non-clocked latch  
+The latch U1/DataPath1/tem_CSR_wdata_reg[3] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#180 Warning
+Non-clocked latch  
+The latch U1/DataPath1/tem_CSR_wdata_reg[4] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#181 Warning
+Non-clocked latch  
+The latch U1/DataPath1/tem_CSR_wdata_reg[5] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#182 Warning
+Non-clocked latch  
+The latch U1/DataPath1/tem_CSR_wdata_reg[6] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#183 Warning
+Non-clocked latch  
+The latch U1/DataPath1/tem_CSR_wdata_reg[7] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#184 Warning
+Non-clocked latch  
+The latch U1/DataPath1/tem_CSR_wdata_reg[8] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#185 Warning
+Non-clocked latch  
+The latch U1/DataPath1/tem_CSR_wdata_reg[9] cannot be properly analyzed as its control pin U1/DataPath1/tem_CSR_wdata_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#186 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/ALUSrc_B_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ALUSrc_B_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#187 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/ALU_Control_reg[0] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ALU_Control_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#188 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/ALU_Control_reg[1] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ALU_Control_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#189 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/ALU_Control_reg[2] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ALU_Control_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#190 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/ALU_Control_reg[3] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ALU_Control_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#191 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/Branch_Beq_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Branch_Beq_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#192 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/Branch_Bge_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Branch_Bge_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#193 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/Branch_Bgeu_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Branch_Bgeu_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#194 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/Branch_Blt_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Branch_Blt_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#195 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/Branch_Bltu_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Branch_Bltu_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#196 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/Branch_Bne_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Branch_Bne_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#197 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/CsrWrite_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/CsrWrite_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#198 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/ImmSel_reg[0] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ImmSel_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#199 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/ImmSel_reg[1] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ImmSel_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#200 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/ImmSel_reg[2] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ImmSel_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#201 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/Jump_reg[0] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Jump_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#202 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/Jump_reg[1] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Jump_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#203 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/Length_reg[0] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Length_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#204 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/Length_reg[1] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Length_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#205 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/Length_reg[2] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/Length_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#206 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/MemRW_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/MemRW_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#207 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/MemtoReg_reg[0] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/MemtoReg_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#208 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/MemtoReg_reg[1] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/MemtoReg_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#209 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/MemtoReg_reg[2] cannot be properly analyzed as its control pin U1/SCPU_ctrl1/MemtoReg_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#210 Warning
+Non-clocked latch  
 The latch U1/SCPU_ctrl1/RegWrite_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/RegWrite_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#211 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/ecall_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/ecall_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#212 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/illegal_inst_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/illegal_inst_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#213 Warning
+Non-clocked latch  
+The latch U1/SCPU_ctrl1/mret_reg cannot be properly analyzed as its control pin U1/SCPU_ctrl1/mret_reg/G is not reached by a timing clock
 Related violations: <none>
 
 LATCH-1#1 Advisory
 Existing latches in the design  
-There are 176 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
+There are 213 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
 Related violations: <none>
 
 

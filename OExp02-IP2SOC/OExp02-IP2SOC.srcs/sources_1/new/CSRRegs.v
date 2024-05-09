@@ -26,16 +26,6 @@ module CSRRegs(
     input csr_w,                    // дʹ��
     input[1:0] csr_wsc_mode,        // д�� CSR �Ĵ�����ģʽ
     output  [31:0] rdata,             // ���� CSR �Ĵ���������
-
-
-    input expt_int,                 // �Ƿ����쳣�ж�
-    // ��·����
-    input [31:0]mepc_bypasss_in,
-    input [31:0]mscause_bypass_in,
-    input [31:0]mtval_bypass_in,
-    // mstatus �������ⲿ���룬Ҳ������ CSR ģ���ڽ����޸ġ�
-
-
     output wire [31:0]mstatus,
     output wire [31:0]mtvec,
     output wire [31:0]mcause,
@@ -55,13 +45,13 @@ assign mepc = tem[5];
 initial begin
   tem[1]<=32'd1;
   tem[2]<=32'd2;
-  tem[3]<=32'h28;
+  tem[3]<=32'h8;
   tem[4]<=32'd8;
   tem[5]<=32'd16;
 end
 reg [31:0] tem_rdata;
 assign rdata = tem_rdata;
-always @(negedge clk) begin
+always @(posedge clk) begin
   if(raddr == 12'h300)begin
     tem_rdata = tem[1];
   end
@@ -77,35 +67,37 @@ always @(negedge clk) begin
   else if(raddr == 12'h341)begin
     tem_rdata = tem[5];
   end
+end
+always @(posedge ~clk) begin
 
-  if(rst)begin
+    if(csr_w&&~rst)begin
+        if(waddr == 12'h300)begin
+            tem[1] <= wdata;
+            end
+        else if(waddr == 12'h305)begin
+         tem[2] <= wdata;
+        end
+        else if(waddr == 12'h342)begin
+        tem[3] <= wdata;
+        end
+        else if(waddr == 12'h343)begin
+                tem[4] <= wdata;
+            end
+        else if(waddr == 12'h341)begin
+            tem[5] <= wdata;
+         end
+    end
+     else if(rst)begin
     tem[1]<=32'd1;
     tem[2]<=32'd2;
-    tem[3]<=32'h28;
+    tem[3]<=32'h8;
     tem[4]<=32'd8;
     tem[5]<=32'd16;
   end
+  end
 
-end
-always @(posedge clk or negedge clk) begin
-    if(csr_w&&!rst)begin
-        if(waddr == 12'h300)begin
-    tem[1] <= wdata;
-  end
-  else if(waddr == 12'h305)begin
-     tem[2] <= wdata;
-  end
-  else if(waddr == 12'h342)begin
-    tem[3] <= wdata;
-  end
-  else if(waddr == 12'h343)begin
-    tem[4] <= wdata;
-  end
-  else if(waddr == 12'h341)begin
-    tem[5] <= wdata;
-  end
-    end
-  end
+
+
 
 
 endmodule

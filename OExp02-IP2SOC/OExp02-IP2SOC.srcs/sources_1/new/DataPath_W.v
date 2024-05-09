@@ -46,6 +46,11 @@ module DataPath_W(
     input mret,
     input illegal_inst,
 
+  output wire[31:0]mstatus,
+  output wire[31:0]mtvec,
+  output wire[31:0]mcause,
+  output wire[31:0]mtval,
+  output wire[31:0]mepc, 
   output reg [31:0]PC_out,//next PC/NOW PC
   output wire [31:0]Data_out,//store data out
   output wire [31:0]ALU_out,//ALU out
@@ -155,6 +160,11 @@ RV_INT U4(
   .illegal_inst(illegal_inst),
   .pc_current(PC_out),
   .tem_mstatus(tem_mstatus),
+  .mstatus(mstatus),
+  .mtvec(mtvec),
+  .mcause(mcause),
+  .mtval(mtval),
+  .mepc(mepc),
   .pc(tem_PC_next)
 );
 

@@ -11,7 +11,7 @@
 
 Sourcing tcl script 'D:/Vivado/Vivado/2022.2/scripts/Vivado_init.tcl'
 source CSSTE.tcl -notrace
-create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 375.773 ; gain = 69.227
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 377.234 ; gain = 70.168
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/ip'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/CS/ZJU_CO/doc/Lab2-attachment/OExp02-IP2SOC/IP'.
@@ -28,7 +28,7 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 20992
+INFO: [Synth 8-7075] Helper process launched with PID 11104
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Vivado/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'DataPath' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/Lab4-0-attachment/DataPath.v:32]
 INFO: [Synth 8-9937] previous definition of design element 'DataPath' is here [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath.v:32]
@@ -41,7 +41,7 @@ INFO: [Synth 8-9937] previous definition of design element 'string_to_print' is 
 CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'hex_to_ascii' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/string_to_print.v:1196]
 INFO: [Synth 8-9937] previous definition of design element 'hex_to_ascii' is here [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/UART/string_to_print.v:602]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:18 . Memory (MB): peak = 1214.082 ; gain = 408.234
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1216.449 ; gain = 411.797
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'CSSTE' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:22]
 INFO: [Synth 8-6157] synthesizing module 'SAnti_jitter' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/SAnti_jitter.v:15]
@@ -91,26 +91,35 @@ INFO: [Synth 8-3491] module 'dist_mem_gen_v8_0_13' declared at 'd:/CS/ZJU_CO/OEx
 INFO: [Synth 8-256] done synthesizing module 'ROM_1' (0#1) [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/ROM_1/synth/ROM_1.vhd:66]
 INFO: [Synth 8-6157] synthesizing module 'SCPU_W_1' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_W_1.v:23]
 INFO: [Synth 8-6157] synthesizing module 'SCPU_ctrl_W' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:113]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:153]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:174]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:45]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:121]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:161]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:182]
 INFO: [Synth 8-6155] done synthesizing module 'SCPU_ctrl_W' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:23]
 INFO: [Synth 8-6157] synthesizing module 'DataPath_W' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Regs' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/new/Regs.v:21]
 INFO: [Synth 8-6155] done synthesizing module 'Regs' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/new/Regs.v:21]
+INFO: [Synth 8-6157] synthesizing module 'RV_INT' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/RV_INT.v:22]
+INFO: [Synth 8-6157] synthesizing module 'CSRRegs' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSRRegs.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'CSRRegs' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSRRegs.v:22]
+WARNING: [Synth 8-7071] port 'csr_wsc_mode' of module 'CSRRegs' is unconnected for instance 'U4' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/RV_INT.v:50]
+WARNING: [Synth 8-7023] instance 'U4' of module 'CSRRegs' has 13 connections declared, but only 12 given [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/RV_INT.v:50]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/RV_INT.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'RV_INT' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/RV_INT.v:22]
+WARNING: [Synth 8-7071] port 'en' of module 'RV_INT' is unconnected for instance 'U4' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:150]
+WARNING: [Synth 8-7023] instance 'U4' of module 'RV_INT' has 19 connections declared, but only 18 given [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:150]
 INFO: [Synth 8-6157] synthesizing module 'ImmGen' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/ImmGen.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/ImmGen.v:32]
 INFO: [Synth 8-6155] done synthesizing module 'ImmGen' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/ImmGen.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ALU' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/new/ALU.v:2]
 INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/new/ALU.v:2]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:178]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:184]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:162]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:192]
 INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:199]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:226]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:204]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:223]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:229]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:207]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:237]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:245]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:272]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:250]
 INFO: [Synth 8-6155] done synthesizing module 'DataPath_W' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'SCPU_W_1' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_W_1.v:23]
 INFO: [Synth 8-638] synthesizing module 'RAM_1' [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/RAM_1/synth/RAM_1.vhd:69]
@@ -216,12 +225,12 @@ INFO: [Synth 8-6155] done synthesizing module 'MC_14495' (0#1) [d:/CS/ZJU_CO/OEx
 INFO: [Synth 8-6155] done synthesizing module 'Seg7_Dev' (0#1) [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/Seg7_Dev.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Seg7_Dev_0' (0#1) [d:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.gen/sources_1/ip/Seg7_Dev_0/synth/Seg7_Dev_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'SPIO' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/SPIO.v:15]
-WARNING: [Synth 8-7071] port 'led_clk' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:136]
-WARNING: [Synth 8-7071] port 'led_sout' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:136]
-WARNING: [Synth 8-7071] port 'led_clrn' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:136]
-WARNING: [Synth 8-7071] port 'LED_PEN' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:136]
-WARNING: [Synth 8-7071] port 'GPIOf0' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:136]
-WARNING: [Synth 8-7023] instance 'U7' of module 'SPIO' has 12 connections declared, but only 7 given [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:136]
+WARNING: [Synth 8-7071] port 'led_clk' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:143]
+WARNING: [Synth 8-7071] port 'led_sout' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:143]
+WARNING: [Synth 8-7071] port 'led_clrn' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:143]
+WARNING: [Synth 8-7071] port 'LED_PEN' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:143]
+WARNING: [Synth 8-7071] port 'GPIOf0' of module 'SPIO' is unconnected for instance 'U7' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:143]
+WARNING: [Synth 8-7023] instance 'U7' of module 'SPIO' has 12 connections declared, but only 7 given [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:143]
 INFO: [Synth 8-6157] synthesizing module 'UART' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/UART.v:23]
 INFO: [Synth 8-6157] synthesizing module 'uart_display' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/uart_display.v:23]
 INFO: [Synth 8-6157] synthesizing module 'string_to_print' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/string_to_print.v:1]
@@ -235,46 +244,42 @@ INFO: [Synth 8-6157] synthesizing module 'uart_tx' [D:/CS/ZJU_CO/OExp02-IP2SOC/O
 INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/UART/uart_tx.v:52]
 INFO: [Synth 8-6155] done synthesizing module 'uart_display' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/uart_display.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'UART' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/UART.v:23]
-WARNING: [Synth 8-7071] port 'rs1' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'rs1_val' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'rs2' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'rs2_val' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'rd' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'reg_i_data' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'reg_wen' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'is_imm' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'is_auipc' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'is_lui' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'imm' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'a_val' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'b_val' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'alu_ctrl' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'cmp_ctrl' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'alu_res' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'cmp_res' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'is_branch' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'is_jal' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'is_jalr' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'do_branch' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'pc_branch' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'mem_wen' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'mem_ren' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'dmem_o_data' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'dmem_i_data' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'dmem_addr' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'csr_wen' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'csr_ind' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'csr_ctrl' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'csr_r_data' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'mstatus_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'mcause_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'mepc_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'mtval_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'mtvec_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'mie_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7071] port 'mip_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
-WARNING: [Synth 8-7023] instance 'uart_inst' of module 'UART' has 75 connections declared, but only 37 given [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:140]
+WARNING: [Synth 8-7071] port 'rs1' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'rs1_val' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'rs2' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'rs2_val' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'rd' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'reg_i_data' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'reg_wen' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'is_imm' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'is_auipc' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'is_lui' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'imm' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'a_val' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'b_val' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'alu_ctrl' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'cmp_ctrl' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'alu_res' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'cmp_res' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'is_branch' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'is_jal' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'is_jalr' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'do_branch' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'pc_branch' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'mem_wen' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'mem_ren' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'dmem_o_data' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'dmem_i_data' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'dmem_addr' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'csr_wen' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'csr_ind' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'csr_ctrl' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'csr_r_data' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'mie_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7071] port 'mip_o' of module 'UART' is unconnected for instance 'uart_inst' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
+WARNING: [Synth 8-7023] instance 'uart_inst' of module 'UART' has 75 connections declared, but only 42 given [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:147]
 INFO: [Synth 8-6155] done synthesizing module 'CSSTE' (0#1) [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/CSSTE.v:22]
+WARNING: [Synth 8-3848] Net en in module/entity RV_INT does not have driver. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/RV_INT.v:44]
 WARNING: [Synth 8-6014] Unused sequential element rst_char_wait_count_reg was removed.  [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/uart_display.v:392]
 WARNING: [Synth 8-3848] Net is_transmitting in module/entity uart_display does not have driver. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/uart_display.v:134]
 WARNING: [Synth 8-3848] Net rst_is_transmitting in module/entity uart_display does not have driver. [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/lab4串口/uart_display.v:134]
@@ -385,18 +390,18 @@ WARNING: [Synth 8-7129] Port ADDRB[4] in module blk_mem_gen_prim_wrapper_init is
 WARNING: [Synth 8-7129] Port ADDRB[3] in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:50 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:27 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:50 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:27 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:50 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:27 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.272 . Memory (MB): peak = 1566.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.146 . Memory (MB): peak = 1561.348 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 41 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -411,7 +416,7 @@ Parsing XDC File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.runs/synth_1/dont_tou
 Finished Parsing XDC File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1566.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1561.348 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 40 instances were transformed.
   AND2 => LUT2: 1 instance 
@@ -422,19 +427,19 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   OR3 => LUT3: 3 instances
   OR4 => LUT4: 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1566.617 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1561.348 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Vivado/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:01:09 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:37 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:01:09 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:37 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -443,30 +448,35 @@ Applied set_property KEEP_HIERARCHY = SOFT for U6. (constraint file  auto genera
 Applied set_property KEEP_HIERARCHY = SOFT for U2. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for U3. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:01:09 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:37 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'print_state_reg' in module 'uart_display'
-WARNING: [Synth 8-327] inferring latch for variable 'ImmSel_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:47]
-WARNING: [Synth 8-327] inferring latch for variable 'ALUSrc_B_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:48]
-WARNING: [Synth 8-327] inferring latch for variable 'MemtoReg_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:49]
-WARNING: [Synth 8-327] inferring latch for variable 'Jump_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:50]
-WARNING: [Synth 8-327] inferring latch for variable 'Branch_Beq_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:51]
-WARNING: [Synth 8-327] inferring latch for variable 'Branch_Bne_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:52]
-WARNING: [Synth 8-327] inferring latch for variable 'Branch_Blt_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:53]
-WARNING: [Synth 8-327] inferring latch for variable 'Branch_Bltu_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:54]
-WARNING: [Synth 8-327] inferring latch for variable 'Branch_Bge_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:55]
-WARNING: [Synth 8-327] inferring latch for variable 'Branch_Bgeu_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:56]
-WARNING: [Synth 8-327] inferring latch for variable 'Length_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:57]
-WARNING: [Synth 8-327] inferring latch for variable 'RegWrite_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:58]
-WARNING: [Synth 8-327] inferring latch for variable 'MemRW_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:59]
-WARNING: [Synth 8-327] inferring latch for variable 'ALU_Control_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:62]
-WARNING: [Synth 8-327] inferring latch for variable 'CPU_MIO_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:60]
+WARNING: [Synth 8-327] inferring latch for variable 'ImmSel_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:55]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUSrc_B_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:56]
+WARNING: [Synth 8-327] inferring latch for variable 'MemtoReg_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:57]
+WARNING: [Synth 8-327] inferring latch for variable 'Jump_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:58]
+WARNING: [Synth 8-327] inferring latch for variable 'Branch_Beq_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:59]
+WARNING: [Synth 8-327] inferring latch for variable 'Branch_Bne_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:60]
+WARNING: [Synth 8-327] inferring latch for variable 'Branch_Blt_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:61]
+WARNING: [Synth 8-327] inferring latch for variable 'Branch_Bltu_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:62]
+WARNING: [Synth 8-327] inferring latch for variable 'Branch_Bge_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:63]
+WARNING: [Synth 8-327] inferring latch for variable 'Branch_Bgeu_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:64]
+WARNING: [Synth 8-327] inferring latch for variable 'Length_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:65]
+WARNING: [Synth 8-327] inferring latch for variable 'RegWrite_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:66]
+WARNING: [Synth 8-327] inferring latch for variable 'MemRW_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:67]
+WARNING: [Synth 8-327] inferring latch for variable 'ALU_Control_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:70]
+WARNING: [Synth 8-327] inferring latch for variable 'CPU_MIO_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:68]
+WARNING: [Synth 8-327] inferring latch for variable 'CsrWrite_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:255]
+WARNING: [Synth 8-327] inferring latch for variable 'ecall_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:261]
+WARNING: [Synth 8-327] inferring latch for variable 'mret_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:260]
+WARNING: [Synth 8-327] inferring latch for variable 'illegal_inst_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/SCPU_ctrl_W.v:262]
 WARNING: [Synth 8-327] inferring latch for variable 'Imm_out_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/ImmGen.v:33]
-WARNING: [Synth 8-327] inferring latch for variable 'PC_next_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:200]
-WARNING: [Synth 8-327] inferring latch for variable 'Tem_Data_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:160]
-WARNING: [Synth 8-327] inferring latch for variable 'Tem_wea_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:159]
-WARNING: [Synth 8-327] inferring latch for variable 'Wt_data_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:95]
-WARNING: [Synth 8-327] inferring latch for variable 'Tem_mem_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:158]
+WARNING: [Synth 8-327] inferring latch for variable 'PC_next_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:246]
+WARNING: [Synth 8-327] inferring latch for variable 'Tem_Data_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:197]
+WARNING: [Synth 8-327] inferring latch for variable 'Tem_wea_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:196]
+WARNING: [Synth 8-327] inferring latch for variable 'tem_CSR_wdata_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:146]
+WARNING: [Synth 8-327] inferring latch for variable 'Wt_data_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:105]
+WARNING: [Synth 8-327] inferring latch for variable 'Tem_mem_reg' [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:195]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -487,14 +497,14 @@ WARNING: [Synth 8-327] inferring latch for variable 'Tem_mem_reg' [D:/CS/ZJU_CO/
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'print_state_reg' using encoding 'one-hot' in module 'uart_display'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:01:35 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:52 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   32 Bit       Adders := 6     
+	   2 Input   32 Bit       Adders := 8     
 	   3 Input   32 Bit       Adders := 1     
 	   2 Input   14 Bit       Adders := 1     
 	   2 Input    7 Bit       Adders := 448   
@@ -502,16 +512,17 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 33    
+	               32 Bit    Registers := 42    
 	               14 Bit    Registers := 1     
 	                8 Bit    Registers := 3     
 	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 4     
+	                1 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 66    
+	   2 Input   32 Bit        Muxes := 76    
+	   5 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 8     
 	  11 Input   32 Bit        Muxes := 1     
-	   4 Input   32 Bit        Muxes := 7     
 	   7 Input   32 Bit        Muxes := 1     
 	   3 Input   14 Bit        Muxes := 1     
 	   2 Input   14 Bit        Muxes := 8     
@@ -520,22 +531,29 @@ Detailed RTL Component Info :
 	   4 Input    8 Bit        Muxes := 2     
 	   8 Input    8 Bit        Muxes := 1     
 	   2 Input    8 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
 	   8 Input    4 Bit        Muxes := 2     
 	   7 Input    4 Bit        Muxes := 1     
-	  10 Input    4 Bit        Muxes := 1     
+	  11 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 2     
-	  10 Input    3 Bit        Muxes := 2     
+	  11 Input    3 Bit        Muxes := 2     
 	   6 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 2     
-	  10 Input    2 Bit        Muxes := 2     
+	   4 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 3     
+	   5 Input    3 Bit        Muxes := 1     
+	  11 Input    2 Bit        Muxes := 3     
 	   7 Input    2 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 1     
-	  10 Input    1 Bit        Muxes := 5     
-	  11 Input    1 Bit        Muxes := 6     
-	   6 Input    1 Bit        Muxes := 4     
-	   2 Input    1 Bit        Muxes := 68    
-	   4 Input    1 Bit        Muxes := 8     
-	  16 Input    1 Bit        Muxes := 1     
+	  11 Input    1 Bit        Muxes := 10    
+	   2 Input    1 Bit        Muxes := 74    
+	  12 Input    1 Bit        Muxes := 5     
+	   6 Input    1 Bit        Muxes := 5     
+	   4 Input    1 Bit        Muxes := 9     
+	  17 Input    1 Bit        Muxes := 1     
+	   7 Input    1 Bit        Muxes := 4     
+	   3 Input    1 Bit        Muxes := 1     
+	   5 Input    1 Bit        Muxes := 1     
 	  14 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -583,7 +601,7 @@ WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[6]) is unus
 WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[5]) is unused and will be removed from module CSSTE.
 WARNING: [Synth 8-3332] Sequential element (U1/DataPath1/Tem_wea_reg[4]) is unused and will be removed from module CSSTE.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:02:27 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:01:24 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -593,8 +611,8 @@ ROM: Preliminary Mapping Report
 +---------------------+--------------------------------------------------------+---------------+----------------+
 |Module Name          | RTL Object                                             | Depth x Width | Implemented As | 
 +---------------------+--------------------------------------------------------+---------------+----------------+
-|rom                  | rom[1023]                                              | 1024x31       | LUT            | 
-|dist_mem_gen_v8_0_13 | synth_options.dist_mem_inst/gen_rom.rom_inst/rom[1023] | 1024x31       | LUT            | 
+|rom                  | rom[1023]                                              | 1024x30       | LUT            | 
+|dist_mem_gen_v8_0_13 | synth_options.dist_mem_inst/gen_rom.rom_inst/rom[1023] | 1024x30       | LUT            | 
 +---------------------+--------------------------------------------------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
@@ -604,19 +622,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:02:33 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:01:31 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:02:34 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:01:32 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:02:35 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:01:34 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -635,37 +653,37 @@ Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 CRITICAL WARNING: [Synth 8-4442] BlackBox module U9 has unconnected pin readn
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:02:40 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:01:39 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:02:40 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:01:39 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:02:40 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:01:39 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:02:41 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:01:40 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:02:41 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:01:40 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:02:41 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:01:40 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -696,34 +714,35 @@ Report Cell Usage:
 |7     |AND2              |     1|
 |8     |AND3              |    11|
 |9     |AND4              |     9|
-|10    |BUFG              |     5|
-|11    |CARRY4            |    80|
+|10    |BUFG              |     7|
+|11    |CARRY4            |    96|
 |12    |INV               |     5|
-|13    |LUT1              |    21|
-|14    |LUT2              |   262|
-|15    |LUT3              |   505|
-|16    |LUT4              |   550|
-|17    |LUT5              |   409|
-|18    |LUT6              |  2235|
-|19    |MUXF7             |   381|
-|20    |MUXF8             |    72|
+|13    |LUT1              |    23|
+|14    |LUT2              |   266|
+|15    |LUT3              |   580|
+|16    |LUT4              |   643|
+|17    |LUT5              |   480|
+|18    |LUT6              |  2417|
+|19    |MUXF7             |   379|
+|20    |MUXF8             |    73|
 |21    |OR2               |     7|
 |22    |OR3               |     3|
 |23    |OR4               |     4|
 |24    |RAMB36E1          |     1|
 |25    |FDCE              |    32|
-|26    |FDRE              |  1147|
-|27    |LD                |   176|
-|28    |IBUF              |    22|
-|29    |OBUF              |    33|
-|30    |OBUFT             |    14|
+|26    |FDRE              |  1405|
+|27    |LD                |   210|
+|28    |LDC               |     3|
+|29    |IBUF              |    22|
+|30    |OBUF              |    33|
+|31    |OBUFT             |    14|
 +------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:02:41 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:01:40 . Memory (MB): peak = 1561.348 ; gain = 756.695
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 1 critical warnings and 424 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:02:34 . Memory (MB): peak = 1566.617 ; gain = 760.770
-Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:02:41 . Memory (MB): peak = 1566.617 ; gain = 760.770
+Synthesis finished with 0 errors, 1 critical warnings and 430 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:01:36 . Memory (MB): peak = 1561.348 ; gain = 756.695
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:01:40 . Memory (MB): peak = 1561.348 ; gain = 756.695
 INFO: [Project 1-571] Translating synthesized netlist
 Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/SAnti_jitter.edf]
 Finished Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/SAnti_jitter.edf]
@@ -737,29 +756,30 @@ Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/impor
 Finished Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/Multi_8CH32.edf]
 Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/SPIO.edf]
 Finished Parsing EDIF File [D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.srcs/sources_1/imports/IP/SPIO.edf]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 1566.617 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 848 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.119 . Memory (MB): peak = 1561.348 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 900 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2017.4
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 2 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1566.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1561.348 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 216 instances were transformed.
+  A total of 253 instances were transformed.
   AND2 => LUT2: 1 instance 
   AND3 => LUT3: 11 instances
   AND4 => LUT4: 9 instances
   INV => LUT1: 5 instances
-  LD => LDCE: 176 instances
+  LD => LDCE: 210 instances
+  LDC => LDCE: 3 instances
   OR2 => LUT2: 7 instances
   OR3 => LUT3: 3 instances
   OR4 => LUT4: 4 instances
 
-Synth Design complete, checksum: ded70312
+Synth Design complete, checksum: a0ee48a6
 INFO: [Common 17-83] Releasing license: Synthesis
-109 Infos, 211 Warnings, 6 Critical Warnings and 0 Errors encountered.
+114 Infos, 216 Warnings, 6 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:03:06 . Memory (MB): peak = 1566.617 ; gain = 1158.605
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:02:03 . Memory (MB): peak = 1561.348 ; gain = 1151.879
 INFO: [Common 17-600] The following parameters have non-default value.
 general.maxThreads
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
@@ -768,4 +788,4 @@ INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WA
 [libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
 INFO: [Common 17-1381] The checkpoint 'D:/CS/ZJU_CO/OExp02-IP2SOC/OExp02-IP2SOC.runs/synth_1/CSSTE.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file CSSTE_utilization_synth.rpt -pb CSSTE_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon May  6 18:14:58 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu May  9 14:36:50 2024...

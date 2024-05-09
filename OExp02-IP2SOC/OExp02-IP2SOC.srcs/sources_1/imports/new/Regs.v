@@ -110,9 +110,9 @@ always @(posedge clk) begin
     tem[Wt_addr] <= Wt_data;
   end
 end
-//always @(negedge clk) begin
-//if(RegWrite&&!rst&&Wt_addr)begin
+// always @(negedge clk) begin
+// if(RegWrite&&!rst&&Wt_addr)begin
 //    tem[Wt_addr] <= Wt_data;
 //  end
-//end
+// end
 endmodule
