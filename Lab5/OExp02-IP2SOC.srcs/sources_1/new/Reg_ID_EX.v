@@ -24,6 +24,8 @@ module Reg_ID_EX(
     input clk,
     input rst,
     input [31:0] PC,
+    input [4:0]Rs1_addr,
+    input [4:0]Rs2_addr,
     input [31:0] Rs1_data,
     input [31:0] Rs2_data,
     input [31:0] Imm,
@@ -42,6 +44,8 @@ module Reg_ID_EX(
     input [3:0] wea,
     input [3:0]ALU_Control,
     input ALUSrc_B,
+    output reg [4:0]ID_EX_Rs1_addr,
+    output reg [4:0]ID_EX_Rs2_addr,
     output reg [31:0]ID_EX_PC,
     output reg [31:0]ID_EX_Rs1_data,
     output reg [31:0]ID_EX_Rs2_data,
@@ -60,7 +64,7 @@ module Reg_ID_EX(
     output reg [3:0]ID_EX_wea,
     output reg [3:0]ID_EX_ALU_Control,
     output reg ID_EX_ALUSrc_B,
-    output reg [31:0]ID_EX_Wt_addr
+    output reg [4:0]ID_EX_Wt_addr
 
     );
 
@@ -85,6 +89,8 @@ always@(posedge clk or posedge rst)begin
         ID_EX_ALU_Control <= 4'b0;
         ID_EX_ALUSrc_B <= 1'b0;
         ID_EX_Wt_addr <= 5'b0;
+        ID_EX_Rs1_addr <= 5'b0;
+        ID_EX_Rs2_addr <= 5'b0;
     end
     else begin
         ID_EX_PC <= PC;
@@ -106,6 +112,8 @@ always@(posedge clk or posedge rst)begin
         ID_EX_ALU_Control <= ALU_Control;
         ID_EX_ALUSrc_B <= ALUSrc_B;
         ID_EX_Wt_addr <= Wt_addr;
+        ID_EX_Rs1_addr <= Rs1_addr;
+        ID_EX_Rs2_addr <= Rs2_addr;
     end
 end
 

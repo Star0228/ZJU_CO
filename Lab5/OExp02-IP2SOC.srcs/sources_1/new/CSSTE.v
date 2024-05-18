@@ -98,7 +98,7 @@ SCPU_W_1 U1(
 //RAM_1 U3(.clka(~clk_100mhz),.wea(U4_datawe),.addra(U4_ramadd),.dina(u4ram),.douta(U3_douta));
 
 RAM_1 U3(
-    .clka(~clk_100mhz),
+    .clka(~U8_clkcpu),
     .wea({4{U1_memrw}}&wea),
     .addra(U1_add[11:2]),
     .dina(U1_data),
@@ -143,11 +143,6 @@ UART uart_inst(
     .tx(tx), 
     .pc(U1_pc), 
     .inst(U2_spo),
-    .mstatus_o(mstatus),
-    .mcause_o(mcause),
-    .mepc_o(mepc),
-    .mtval_o(mtval),
-    .mtvec_o(mtvec),
     .x0(Reg00),
     .ra(Reg01),.sp(Reg02),.gp(Reg03),.tp(Reg04),.t0(Reg05),.t1(Reg06),.t2(Reg07),.s0(Reg08),.s1(Reg09),.a0(Reg10),.a1(Reg11),.a2(Reg12),.a3(Reg13),
     .a4(Reg14),.a5(Reg15),.a6(Reg16),.a7(Reg17),.s2(Reg18),.s3(Reg19),.s4(Reg20),.s5(Reg21),.s6(Reg22),.s7(Reg23),.s8(Reg24),.s9(Reg25),.s10(Reg26),

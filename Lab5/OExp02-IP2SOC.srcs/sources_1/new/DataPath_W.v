@@ -109,8 +109,10 @@ SCPU_ctrl_W SCPU_CTRL(
 
 wire [31:0] Rs1_data, Rs2_data;
 reg [31:0]Wt_data;
+
 wire [4:0] MEM_WB_Wt_addr;
 wire MEM_WB_RegWrite;
+wire [1:0]Forward_A,Forward_B;
 Regs U1(
   .clk(clk),
   .rst(rst),
@@ -168,14 +170,17 @@ wire ID_EX_RegWrite;
 wire ID_EX_Branch_Beq,ID_EX_Branch_Bne,ID_EX_Branch_Blt,ID_EX_Branch_Bltu,ID_EX_Branch_Bge,ID_EX_Branch_Bgeu;
 wire ID_EX_MemRW;
 wire [1:0]ID_EX_Jump;
+wire [1:0] EX_MEM_Jump;
 wire [3:0]ID_EX_wea;
 wire [3:0]ID_EX_ALU_Control;
 wire ID_EX_ALUSrc_B;
-wire [31:0]ID_EX_Wt_addr;
+wire [4:0]ID_EX_Wt_addr,ID_EX_Rs1_addr,ID_EX_Rs2_addr;
 Reg_ID_EX ID_EX(
   .clk(clk),
-  .rst(rst),
+  .rst(rst|(EX_MEM_Jump[0]&EX_MEM_Jump[1])),
   .PC(PC_out),
+  .Rs1_addr(inst_field[19:15]),
+  .Rs2_addr(inst_field[24:20]),
   .Rs1_data(Rs1_data),
   .Rs2_data(Rs2_data),
   .Imm(Imm_out),
@@ -212,16 +217,22 @@ Reg_ID_EX ID_EX(
   .ID_EX_wea(ID_EX_wea),  
   .ID_EX_ALU_Control(ID_EX_ALU_Control),
   .ID_EX_ALUSrc_B(ID_EX_ALUSrc_B),
+  .ID_EX_Rs1_addr(ID_EX_Rs1_addr),
+  .ID_EX_Rs2_addr(ID_EX_Rs2_addr),
   .ID_EX_Wt_addr(ID_EX_Wt_addr)
 );
 
 
 wire [31:0] Ior2;
-assign Ior2 = ID_EX_ALUSrc_B? ID_EX_Imm: ID_EX_Rs2_data;
+wire [31:0] Forward_A_data,Forward_B_data;
+assign Forward_A_data = (Forward_A==2'b00)?ID_EX_Rs1_data:((Forward_A==2'b01)?Tem_RegWrite:((Forward_A==2'b10)?Wt_data:32'b0));
+assign Forward_B_data = (Forward_B==2'b00)?ID_EX_Rs2_data:((Forward_B==2'b01)?Tem_RegWrite:((Forward_B==2'b10)?Wt_data:32'b0));
+assign Ior2 = ID_EX_ALUSrc_B? ID_EX_Imm: Forward_B_data;
 wire zero;
 wire [31:0] EX_ALU_out;
+wire [31:0] Tem_RegWrite;
 ALU U3(
-  .A(ID_EX_Rs1_data),
+  .A(Forward_A_data),
   .B(Ior2),
   .ALU_operation(ID_EX_ALU_Control),
   .res(EX_ALU_out),
@@ -236,7 +247,7 @@ wire EX_MEM_zero;
 wire EX_MEM_Branch_Beq,EX_MEM_Branch_Bne,EX_MEM_Branch_Blt,EX_MEM_Branch_Bltu,EX_MEM_Branch_Bge,EX_MEM_Branch_Bgeu;
 wire [2:0] EX_MEM_Length,EX_MEM_MemtoReg;
 wire EX_MEM_RegWrite;
-wire [1:0] EX_MEM_Jump;
+
 wire [3:0] EX_MEM_wea;
 Reg_EX_MEM EX_MEM(
   .clk(clk),
@@ -281,13 +292,23 @@ Reg_EX_MEM EX_MEM(
   .EX_MEM_wea(EX_MEM_wea)
 );
 
+
+Tem_RegWrite Temreg(
+  .MemtoReg(EX_MEM_MemtoReg),
+  .Length(EX_MEM_Length),
+  .Data_in(Data_in),
+  .ALU_out(EX_MEM_ALU_out),
+  .Imm(EX_MEM_Imm),
+  .PC_out(EX_MEM_PC),
+  .Tem_RegWrite(Tem_RegWrite)
+);
 wire [31:0] MEM_WB_PC,MEM_WB_ALU_out,MEM_WB_Data_in,MEM_WB_Imm;
 
 wire [2:0] MEM_WB_Length,MEM_WB_MemtoReg;
 
 Reg_MEM_WB MEM_WB(
   .clk(clk),
-  .rst(rst),
+  .rst(rst|(EX_MEM_Jump[0]&EX_MEM_Jump[1])),
   .PC(EX_MEM_PC),
   .ALU_out(EX_MEM_ALU_out),
   .Data_in(Data_in),
@@ -307,12 +328,23 @@ Reg_MEM_WB MEM_WB(
 );
 
 
+Forwarding_Ctrl forward_strl(
+  .ID_EX_Rs1_addr(ID_EX_Rs1_addr),
+  .ID_EX_Rs2_addr(ID_EX_Rs2_addr),
+  .EX_MEM_Wt_addr(EX_MEM_Wt_addr),
+  .MEM_WB_Wt_addr(MEM_WB_Wt_addr),
+  .EX_MEM_RegWrite(EX_MEM_RegWrite),
+  .MEM_WB_RegWrite(MEM_WB_RegWrite),
+  .For_A(Forward_A),
+  .For_B(Forward_B)
+);
 
 wire Branch = (EX_MEM_Branch_Beq&EX_MEM_zero)|(EX_MEM_Branch_Bne&(~EX_MEM_zero))|(EX_MEM_Branch_Blt&EX_MEM_ALU_out[0])|(EX_MEM_Branch_Bltu&EX_MEM_ALU_out[0])|(EX_MEM_Branch_Bge&(~EX_MEM_ALU_out[0]))|(EX_MEM_Branch_Bgeu&(~EX_MEM_ALU_out[0]));
 wire [31:0] PC_Branch = Branch?EX_MEM_PC_Jal:EX_MEM_PC+32'd4;
 reg [31:0] PC_next;
 wire [31:0] reg_mem;
-reg [31:0] Tem_mem,Tem_wea,Tem_Data;
+reg [31:0] Tem_mem,Tem_Data;
+reg [3:0]Tem_wea;
 assign reg_mem = Tem_mem;
 assign wea = Tem_wea;
 assign Data_out = Tem_Data;

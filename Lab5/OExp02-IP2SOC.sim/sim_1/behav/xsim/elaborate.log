@@ -4,7 +4,6 @@ Running: D:/Vivado/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 5 for port 'Wt_addr' [D:/CS/ZJU_CO/Lab5/OExp02-IP2SOC.srcs/sources_1/new/DataPath_W.v:250]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -15,7 +14,9 @@ Compiling module xil_defaultlib.ImmGen
 Compiling module xil_defaultlib.Reg_ID_EX
 Compiling module xil_defaultlib.ALU
 Compiling module xil_defaultlib.Reg_EX_MEM
+Compiling module xil_defaultlib.Tem_RegWrite
 Compiling module xil_defaultlib.Reg_MEM_WB
+Compiling module xil_defaultlib.Forwarding_Ctrl
 Compiling module xil_defaultlib.DataPath_W
 Compiling module xil_defaultlib.SCPU_W_1
 Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...

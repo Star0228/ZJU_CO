@@ -39,7 +39,6 @@ module testbench(
         .clk(clk),
         .rst(rst),
         .Data_in(douta),
-
         .MIO_ready(CPU_MIO),
         .inst_in(spo),
         .Addr_out(Addr_out),

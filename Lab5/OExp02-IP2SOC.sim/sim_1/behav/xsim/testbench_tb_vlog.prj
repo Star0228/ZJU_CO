@@ -42,6 +42,8 @@ verilog xil_defaultlib  \
 "../../../../OExp02-IP2SOC.srcs/sources_1/new/Reg_ID_EX.v" \
 "../../../../OExp02-IP2SOC.srcs/sources_1/new/Reg_EX_MEM.v" \
 "../../../../OExp02-IP2SOC.srcs/sources_1/new/Reg_MEM_WB.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/new/Forwarding_Ctrl.v" \
+"../../../../OExp02-IP2SOC.srcs/sources_1/new/Tem_RegWrite.v" \
 "../../../../OExp02-IP2SOC.srcs/sim_1/new/testbench_tb.v" \
 
 # compile glbl module
