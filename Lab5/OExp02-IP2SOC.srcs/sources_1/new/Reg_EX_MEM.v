@@ -28,6 +28,7 @@ module Reg_EX_MEM(
     input [31:0] ALU_out,
     input zero,
     input [31:0] Rs2_data,
+    input [4:0] Rs2_addr,
     input [31:0] Imm,
     input [4:0]Wt_addr,
     input [2:0]Length,
@@ -47,6 +48,7 @@ module Reg_EX_MEM(
     output reg [31:0]EX_MEM_ALU_out,
     output reg EX_MEM_zero,
     output reg [31:0]EX_MEM_Rs2_data,
+    output reg [4:0]EX_MEM_Rs2_addr,
     output reg [31:0]EX_MEM_Imm,
     output reg [4:0]EX_MEM_Wt_addr,
     output reg [2:0]EX_MEM_Length,
@@ -84,6 +86,7 @@ always@(posedge clk or posedge rst)begin
         EX_MEM_MemRW <= 1'b0;
         EX_MEM_Jump <= 2'b0;
         EX_MEM_wea <= 4'b0;
+        EX_MEM_Rs2_addr <= 5'b0;
     end
     else begin
         EX_MEM_PC <= PC;
@@ -105,6 +108,7 @@ always@(posedge clk or posedge rst)begin
         EX_MEM_MemRW <= MemRW;
         EX_MEM_Jump <= Jump;
         EX_MEM_wea <= wea;
+        EX_MEM_Rs2_addr <= Rs2_addr;
     end
 end
 

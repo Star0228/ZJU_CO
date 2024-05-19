@@ -25,29 +25,38 @@ module Forwarding_Ctrl(
     input [4:0]ID_EX_Rs2_addr,
     input [4:0]EX_MEM_Wt_addr,
     input [4:0]MEM_WB_Wt_addr,
+    input [4:0]EX_MEM_Rs2_addr,
     input EX_MEM_RegWrite,
     input MEM_WB_RegWrite,
     output reg [1:0]For_A,
-    output reg [1:0]For_B
+    output reg [1:0]For_B,
+    output reg For_M
     );
+    // assign For_M = (MEM_WB_RegWrite && MEM_WB_Wt_addr==EX_MEM_Rs2_addr)?1'b1:1'b0;
     always@(*)begin
         if(EX_MEM_RegWrite && ID_EX_Rs1_addr == EX_MEM_Wt_addr && EX_MEM_Wt_addr != 5'b0)begin
-            For_A = 2'b01;
+            For_A <= 2'b01;
         end
         else if(MEM_WB_RegWrite && ID_EX_Rs1_addr == MEM_WB_Wt_addr && MEM_WB_Wt_addr != 5'b0)begin
-            For_A = 2'b10;
+            For_A <= 2'b10;
         end
         else begin
-            For_A = 2'b00;
+            For_A <= 2'b00;
         end
         if(EX_MEM_RegWrite &&ID_EX_Rs2_addr == EX_MEM_Wt_addr && EX_MEM_Wt_addr != 5'b0)begin
-            For_B = 2'b01;
+            For_B <= 2'b01;
         end
         else if(MEM_WB_RegWrite && ID_EX_Rs2_addr == MEM_WB_Wt_addr && MEM_WB_Wt_addr != 5'b0)begin
-            For_B = 2'b10;
+            For_B <= 2'b10;
         end
         else begin
-            For_B = 2'b00;
+            For_B <= 2'b00;
+        end
+        if(MEM_WB_RegWrite && MEM_WB_Wt_addr==EX_MEM_Rs2_addr) begin
+            For_M <= 1'b1;
+        end
+        else begin
+            For_M <= 1'b0;
         end
     end
 

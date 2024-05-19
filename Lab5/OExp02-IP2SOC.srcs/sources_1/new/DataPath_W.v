@@ -175,9 +175,10 @@ wire [3:0]ID_EX_wea;
 wire [3:0]ID_EX_ALU_Control;
 wire ID_EX_ALUSrc_B;
 wire [4:0]ID_EX_Wt_addr,ID_EX_Rs1_addr,ID_EX_Rs2_addr;
+wire Branch;
 Reg_ID_EX ID_EX(
   .clk(clk),
-  .rst(rst|(EX_MEM_Jump[0]&EX_MEM_Jump[1])),
+  .rst(rst|Branch|(EX_MEM_Jump[0]^EX_MEM_Jump[1])),
   .PC(PC_out),
   .Rs1_addr(inst_field[19:15]),
   .Rs2_addr(inst_field[24:20]),
@@ -242,7 +243,7 @@ wire [31:0] PC_Jal ;
 assign PC_Jal = ID_EX_PC+ID_EX_Imm;
 
 wire [31:0] EX_MEM_PC,EX_MEM_PC_Jal,EX_MEM_Rs2_data,EX_MEM_Imm;
-wire [4:0] EX_MEM_Wt_addr;  
+wire [4:0] EX_MEM_Wt_addr,EX_MEM_Rs2_addr;  
 wire EX_MEM_zero;
 wire EX_MEM_Branch_Beq,EX_MEM_Branch_Bne,EX_MEM_Branch_Blt,EX_MEM_Branch_Bltu,EX_MEM_Branch_Bge,EX_MEM_Branch_Bgeu;
 wire [2:0] EX_MEM_Length,EX_MEM_MemtoReg;
@@ -257,6 +258,7 @@ Reg_EX_MEM EX_MEM(
   .ALU_out(EX_ALU_out),
   .zero(zero),
   .Rs2_data(ID_EX_Rs2_data),
+  .Rs2_addr(ID_EX_Rs2_addr),
   .Imm(ID_EX_Imm),
   .Wt_addr(ID_EX_Wt_addr),
   .Length(ID_EX_Length),
@@ -276,6 +278,7 @@ Reg_EX_MEM EX_MEM(
   .EX_MEM_ALU_out(EX_MEM_ALU_out),
   .EX_MEM_zero(EX_MEM_zero),
   .EX_MEM_Rs2_data(EX_MEM_Rs2_data),
+  .EX_MEM_Rs2_addr(EX_MEM_Rs2_addr),
   .EX_MEM_Imm(EX_MEM_Imm),
   .EX_MEM_Wt_addr(EX_MEM_Wt_addr),
   .EX_MEM_Length(EX_MEM_Length),
@@ -308,7 +311,7 @@ wire [2:0] MEM_WB_Length,MEM_WB_MemtoReg;
 
 Reg_MEM_WB MEM_WB(
   .clk(clk),
-  .rst(rst|(EX_MEM_Jump[0]&EX_MEM_Jump[1])),
+  .rst(rst),
   .PC(EX_MEM_PC),
   .ALU_out(EX_MEM_ALU_out),
   .Data_in(Data_in),
@@ -327,7 +330,7 @@ Reg_MEM_WB MEM_WB(
   .MEM_WB_RegWrite(MEM_WB_RegWrite)
 );
 
-
+wire For_M;
 Forwarding_Ctrl forward_strl(
   .ID_EX_Rs1_addr(ID_EX_Rs1_addr),
   .ID_EX_Rs2_addr(ID_EX_Rs2_addr),
@@ -335,16 +338,20 @@ Forwarding_Ctrl forward_strl(
   .MEM_WB_Wt_addr(MEM_WB_Wt_addr),
   .EX_MEM_RegWrite(EX_MEM_RegWrite),
   .MEM_WB_RegWrite(MEM_WB_RegWrite),
+  .EX_MEM_Rs2_addr(EX_MEM_Rs2_addr),
   .For_A(Forward_A),
-  .For_B(Forward_B)
+  .For_B(Forward_B),
+  .For_M(For_M)
 );
 
-wire Branch = (EX_MEM_Branch_Beq&EX_MEM_zero)|(EX_MEM_Branch_Bne&(~EX_MEM_zero))|(EX_MEM_Branch_Blt&EX_MEM_ALU_out[0])|(EX_MEM_Branch_Bltu&EX_MEM_ALU_out[0])|(EX_MEM_Branch_Bge&(~EX_MEM_ALU_out[0]))|(EX_MEM_Branch_Bgeu&(~EX_MEM_ALU_out[0]));
+assign Branch = (EX_MEM_Branch_Beq&EX_MEM_zero)|(EX_MEM_Branch_Bne&(~EX_MEM_zero))|(EX_MEM_Branch_Blt&EX_MEM_ALU_out[0])|(EX_MEM_Branch_Bltu&EX_MEM_ALU_out[0])|(EX_MEM_Branch_Bge&(~EX_MEM_ALU_out[0]))|(EX_MEM_Branch_Bgeu&(~EX_MEM_ALU_out[0]));
 wire [31:0] PC_Branch = Branch?EX_MEM_PC_Jal:EX_MEM_PC+32'd4;
 reg [31:0] PC_next;
 wire [31:0] reg_mem;
+wire [31:0] reg_Data_out;
 reg [31:0] Tem_mem,Tem_Data;
 reg [3:0]Tem_wea;
+assign reg_Data_out = For_M?Wt_data:EX_MEM_Rs2_data;
 assign reg_mem = Tem_mem;
 assign wea = Tem_wea;
 assign Data_out = Tem_Data;
@@ -397,19 +404,19 @@ always @(*)begin
       case(EX_MEM_ALU_out[1:0])
         2'b00: begin
           Tem_wea <= 4'b0001;
-          Tem_Data <= {24'b0,EX_MEM_Rs2_data[7:0]};
+          Tem_Data <= {24'b0,reg_Data_out[7:0]};
         end
         2'b01: begin
           Tem_wea <= 4'b0010;
-          Tem_Data <= {16'b0,EX_MEM_Rs2_data[7:0],8'b0};
+          Tem_Data <= {16'b0,reg_Data_out[7:0],8'b0};
         end
         2'b10: begin
           Tem_wea <= 4'b0100;
-          Tem_Data <= {8'b0,EX_MEM_Rs2_data[7:0],16'b0};
+          Tem_Data <= {8'b0,reg_Data_out[7:0],16'b0};
         end
         2'b11: begin
           Tem_wea <= 4'b1000;
-          Tem_Data <= {EX_MEM_Rs2_data[7:0],24'b0};
+          Tem_Data <= {reg_Data_out[7:0],24'b0};
         end
       endcase
     end
@@ -417,21 +424,21 @@ always @(*)begin
       case(EX_MEM_ALU_out[1:0])
         2'b00: begin
           Tem_wea <= 4'b0011;
-          Tem_Data <= {16'b0,EX_MEM_Rs2_data[15:0]};
+          Tem_Data <= {16'b0,reg_Data_out[15:0]};
         end
         2'b01: begin
           Tem_wea <= 4'b0110;
-          Tem_Data <= {8'b0,EX_MEM_Rs2_data[15:0],8'b0};
+          Tem_Data <= {8'b0,reg_Data_out[15:0],8'b0};
         end
         2'b10: begin
           Tem_wea <= 4'b1100;
-          Tem_Data <= {EX_MEM_Rs2_data[15:0],16'b0};
+          Tem_Data <= {reg_Data_out[15:0],16'b0};
         end
       endcase
     end
     3'b100:begin
     Tem_wea <= 4'b1111;
-    Tem_Data <= EX_MEM_Rs2_data;
+    Tem_Data <= reg_Data_out;
     end
   endcase
 
