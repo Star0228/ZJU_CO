@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2024/05/16 21:39:18
+// Create Date: 2024/05/20 08:59:38
 // Design Name: 
-// Module Name: Reg_ID_EX
+// Module Name: Reg_IF_ID
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -18,7 +18,6 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
 
 module Reg_IF_ID(
     input clk,

@@ -1,0 +1,7 @@
+addi    x1, x0, 1 
+addi    x2, x1, 2 
+addi    x3, x2, 3 
+sw      x3, 0(x0) 
+lw      x4, 0(x0) 
+addi    x5, x4, 4 
+addi    x6, x4, 5
