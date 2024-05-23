@@ -44,7 +44,7 @@ assign mepc = tem[5];
 
 initial begin
   tem[1]<=32'd1;
-  tem[2]<=32'd2;
+  tem[2]<=32'd12;
   tem[3]<=32'h8;
   tem[4]<=32'd8;
   tem[5]<=32'd16;
@@ -89,7 +89,7 @@ always @(posedge ~clk) begin
     end
      else if(rst)begin
     tem[1]<=32'd1;
-    tem[2]<=32'd2;
+    tem[2]<=32'd12;
     tem[3]<=32'h8;
     tem[4]<=32'd8;
     tem[5]<=32'd16;

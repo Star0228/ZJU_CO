@@ -1,0 +1,150 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Wed May 22 14:04:10 2024
+| Host         : LAPTOP-0P208VUK running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file CSSTE_control_sets_placed.rpt
+| Design       : CSSTE
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    72 |
+|    Minimum number of control sets                        |    72 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   117 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    72 |
+| >= 0 to < 4        |     9 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    57 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             278 |          120 |
+| No           | No                    | Yes                    |             594 |          184 |
+| No           | Yes                   | No                     |              61 |           19 |
+| Yes          | No                    | No                     |            1088 |          462 |
+| Yes          | No                    | Yes                    |             231 |           68 |
+| Yes          | Yes                   | No                     |              79 |           22 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------------------------------+-----------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+--------------+
+|                  Clock Signal                  |                       Enable Signal                       |                      Set/Reset Signal                     | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------------------------------+-----------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+--------------+
+|  U8/clkdiv_BUFG[11]                            |                                                           |                                                           |                1 |              1 |         1.00 |
+|  U8/clkdiv_BUFG[11]                            |                                                           | U9/rst                                                    |                1 |              1 |         1.00 |
+|  U8/clkdiv_BUFG[9]                             |                                                           |                                                           |                1 |              1 |         1.00 |
+|  U8/clkdiv_BUFG[9]                             |                                                           | U9/rst                                                    |                1 |              1 |         1.00 |
+|  U8/clkdiv_BUFG[6]                             |                                                           |                                                           |                1 |              1 |         1.00 |
+|  clk_100mhz_IBUF_BUFG                          | uart_inst/uart_display/uart_inst/tx_clk[12]_i_1_n_5       |                                                           |                1 |              1 |         1.00 |
+|  U8/clkdiv_BUFG[6]                             |                                                           | U9/rst                                                    |                2 |              2 |         1.00 |
+|  U1/DataPath1/IF_ID/E[0]                       |                                                           |                                                           |                1 |              3 |         3.00 |
+|  U70_BUFG                                      |                                                           |                                                           |                2 |              3 |         1.50 |
+|  U1/DataPath1/IF_ID/O3152[0]                   |                                                           |                                                           |                1 |              4 |         4.00 |
+|  clk_100mhz_IBUF_BUFG                          |                                                           | uart_inst/uart_display/uart_inst/tx_clk[12]_i_1_n_5       |                4 |              5 |         1.25 |
+|  U70_BUFG                                      | U10/counter_Ctrl                                          | U9/rst                                                    |                1 |              6 |         6.00 |
+|  clk_100mhz_IBUF_BUFG                          | uart_inst/uart_display/FSM_onehot_print_state_reg_n_5_[2] |                                                           |                5 |              7 |         1.40 |
+|  clk_100mhz_IBUF_BUFG                          | uart_inst/uart_display/uart_inst/tx_bits_remaining        |                                                           |                4 |             10 |         2.50 |
+|  clk_100mhz_IBUF_BUFG                          | uart_inst/uart_display/FSM_onehot_print_state[13]_i_1_n_5 |                                                           |                2 |             14 |         7.00 |
+|  clk_100mhz_IBUF_BUFG                          | U9/u1/sw[15]_i_1_n_0                                      |                                                           |                8 |             16 |         2.00 |
+|  U1/DataPath1/IF_ID/O3138                      |                                                           |                                                           |                5 |             17 |         3.40 |
+|  clk_100mhz_IBUF_BUFG                          | uart_inst/uart_display/char_wait_count                    | uart_inst/uart_display/FSM_onehot_print_state_reg_n_5_[2] |                5 |             18 |         3.60 |
+|  U1/DataPath1/SCPU_CTRL/IF_ID_OPcode_reg[1][0] |                                                           |                                                           |                6 |             21 |         3.50 |
+|  clk_100mhz_IBUF_BUFG                          |                                                           | uart_inst/uart_display/wait_count                         |                6 |             24 |         4.00 |
+|  clk_100mhz_IBUF_BUFG                          | uart_inst/uart_display/str_idx                            | uart_inst/uart_display/FSM_onehot_print_state_reg_n_5_[1] |                9 |             29 |         3.22 |
+|  clk_100mhz_IBUF_BUFG                          |                                                           |                                                           |               13 |             31 |         2.38 |
+| ~U70_BUFG                                      | U4/GPIOf0000000_we                                        | U9/rst                                                    |               12 |             31 |         2.58 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/E[0]                                  |                                                           |               16 |             32 |         2.00 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[1]_2[0]            |                                                           |               10 |             32 |         3.20 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[2]_3[0]            |                                                           |               14 |             32 |         2.29 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[2]_1[0]            |                                                           |               13 |             32 |         2.46 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[0]_2[0]            |                                                           |               16 |             32 |         2.00 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_2[0]            |                                                           |               10 |             32 |         3.20 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[3]_1[0]            |                                                           |               17 |             32 |         1.88 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[1]_1[0]            |                                                           |               13 |             32 |         2.46 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[3]_5[0]            |                                                           |               18 |             32 |         1.78 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_15[0]           |                                                           |               12 |             32 |         2.67 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_9[0]            |                                                           |               13 |             32 |         2.46 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_10[0]           |                                                           |               12 |             32 |         2.67 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[2]_0[0]            |                                                           |               12 |             32 |         2.67 |
+|  n_3_1728_BUFG                                 |                                                           |                                                           |               11 |             32 |         2.91 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[3]_2[0]            |                                                           |               14 |             32 |         2.29 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_11[0]           |                                                           |               15 |             32 |         2.13 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_5[0]            |                                                           |               13 |             32 |         2.46 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[2]_4[0]            |                                                           |               16 |             32 |         2.00 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_4[0]            |                                                           |               14 |             32 |         2.29 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_6[0]            |                                                           |               10 |             32 |         3.20 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[3]_4[0]            |                                                           |               14 |             32 |         2.29 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[0]_0[0]            |                                                           |               13 |             32 |         2.46 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[3]_0[0]            |                                                           |               14 |             32 |         2.29 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_3[0]            |                                                           |               13 |             32 |         2.46 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_7[0]            |                                                           |               13 |             32 |         2.46 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_8[0]            |                                                           |               13 |             32 |         2.46 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[0]_1[0]            |                                                           |               10 |             32 |         3.20 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_13[0]           |                                                           |               16 |             32 |         2.00 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[2]_2[0]            |                                                           |               16 |             32 |         2.00 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_14[0]           |                                                           |               12 |             32 |         2.67 |
+|  U70_BUFG                                      | U10/counter0_Lock                                         | U9/rst                                                    |                8 |             32 |         4.00 |
+|  U70_BUFG                                      | U10/counter1_Lock                                         | U9/rst                                                    |                9 |             32 |         3.56 |
+|  U70_BUFG                                      | U10/counter2_Lock                                         | U9/rst                                                    |                9 |             32 |         3.56 |
+|  clk_100mhz_IBUF_BUFG                          |                                                           | U9/rst                                                    |                8 |             32 |         4.00 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[3]_3[0]            |                                                           |               11 |             32 |         2.91 |
+|  clk_100mhz_IBUF_BUFG                          |                                                           | uart_inst/clock_cnt[31]_i_1_n_5                           |                9 |             32 |         3.56 |
+|  clk_100mhz_IBUF_BUFG                          | U9/u1/sw_counter[0]_i_1_n_0                               | U9/u1/sw_counter0_carry__0_n_2                            |                8 |             32 |         4.00 |
+|  U8/clkdiv_BUFG[6]                             | U10/counter0[31]                                          | U9/rst                                                    |               10 |             32 |         3.20 |
+|  n_1_1627_BUFG                                 |                                                           |                                                           |                9 |             32 |         3.56 |
+|  n_2_1323_BUFG                                 |                                                           |                                                           |               19 |             32 |         1.68 |
+|  n_4_1324_BUFG                                 |                                                           |                                                           |               19 |             32 |         1.68 |
+|  n_0_1727_BUFG                                 |                                                           |                                                           |               12 |             32 |         2.67 |
+|  U70_BUFG                                      | U1/DataPath1/MEM_WB/MEM_WB_Wt_addr_reg[4]_12[0]           |                                                           |               13 |             32 |         2.46 |
+|  U8/clkdiv_BUFG[11]                            | U10/counter2[32]_i_1_n_0                                  | U9/rst                                                    |                9 |             33 |         3.67 |
+|  U8/clkdiv_BUFG[9]                             | U10/counter1[32]_i_1_n_0                                  | U9/rst                                                    |               10 |             33 |         3.30 |
+|  DataPath1/Tem_wea                             |                                                           |                                                           |               19 |             36 |         1.89 |
+|  U70_BUFG                                      | U4/GPIOe0000000_we                                        |                                                           |               26 |             48 |         1.85 |
+|  U8/Clk_CPU_BUFG                               |                                                           | U1/DataPath1/EX_MEM/rst0                                  |               73 |            223 |         3.05 |
+|  U8/Clk_CPU_BUFG                               |                                                           | U9/rst                                                    |               99 |            335 |         3.38 |
++------------------------------------------------+-----------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+--------------+
+
+

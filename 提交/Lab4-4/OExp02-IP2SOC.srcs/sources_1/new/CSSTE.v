@@ -105,7 +105,7 @@ SCPU_W_1 U1(
 //RAM_1 U3(.clka(~clk_100mhz),.wea(U4_datawe),.addra(U4_ramadd),.dina(u4ram),.douta(U3_douta));
 
 RAM_1 U3(
-    .clka(~clk_100mhz),
+    .clka(~U8_clkcpu),
     .wea({4{U1_memrw}}&wea),
     .addra(U1_add[11:2]),
     .dina(U1_data),
